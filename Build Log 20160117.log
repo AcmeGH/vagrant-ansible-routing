@@ -1817,3 +1817,514 @@ drwxr-xr-x  1 vagrant vagrant   136 Jan 17 00:00 .vagrant
 drwxr-xr-x 23 root    root     4096 Jan 17 16:55 ..
 drwxr-xr-x  1 vagrant vagrant   238 Jan 17 16:59 host_vars
 vagrant@r1:/vagrant$ 
+
+leslieacbookair:vagrant-ansible-routing asamoal$ git push --set-upstream origin dev
+Username for 'https://github.com': asamoal	
+Password for 'https://asamoal@github.com': 
+Counting objects: 51, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (23/23), done.
+Writing objects: 100% (51/51), 19.38 KiB | 0 bytes/s, done.
+Total 51 (delta 4), reused 0 (delta 0)
+To https://github.com/AcmeGH/vagrant-ansible-routing.git
+   bc9e1d0..6bcca10  dev -> dev
+Branch dev set up to track remote branch dev from origin.
+leslieacbookair:vagrant-ansible-routing asamoal$ git status
+On branch dev
+Your branch is up-to-date with 'origin/dev'.
+nothing to commit, working directory clean
+leslieacbookair:vagrant-ansible-routing asamoal$ 
+leslieacbookair:vagrant-ansible-routing asamoal$ pwd
+/Users/asamoal/~Developer/GitLocal/vagrant-ansible-routing
+leslieacbookair:vagrant-ansible-routing asamoal$ 
+leslieacbookair:vagrant-ansible-routing asamoal$ 
+leslieacbookair:vagrant-ansible-routing asamoal$ 
+leslieacbookair:vagrant-ansible-routing asamoal$ 
+leslieacbookair:vagrant-ansible-routing asamoal$ ll
+total 288
+drwxr-xr-x  17 asamoal  staff    578 17 Jan 18:23 .
+drwxr-xr-x@ 19 asamoal  staff    646 16 Jan 21:18 ..
+drwxr-xr-x  14 asamoal  staff    476 17 Jan 19:47 .git
+drwxr-xr-x   4 asamoal  staff    136 17 Jan 01:00 .vagrant
+-rw-r--r--   1 asamoal  staff  81544 17 Jan 18:23 Build Log 20160117.log
+-rw-r--r--   1 asamoal  staff  26620 16 Jan 21:19 README.md
+-rw-r--r--   1 asamoal  staff   2192 17 Jan 16:57 Vagrantfile
+-rw-r--r--   1 asamoal  staff     35 16 Jan 21:19 ansible.cfg
+-rw-r--r--   1 asamoal  staff   2664 16 Jan 21:19 bootstrap.yml
+-rwxr-xr-x   1 asamoal  staff    181 16 Jan 21:19 bootstrap_ansible.sh
+drwxr-xr-x   3 asamoal  staff    102 16 Jan 21:19 group_vars
+drwxr-xr-x   7 asamoal  staff    238 17 Jan 17:59 host_vars
+lrwxr-xr-x   1 asamoal  staff     65 16 Jan 21:19 hosts -> .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory
+-rw-r--r--   1 asamoal  staff    725 16 Jan 21:19 hosts.example
+-rw-r--r--   1 asamoal  staff   3050 17 Jan 16:57 nodes.yml
+-rw-r--r--   1 asamoal  staff    227 16 Jan 21:19 playbook.yml
+-rw-r--r--   1 asamoal  staff    130 16 Jan 21:19 site.yml
+leslieacbookair:vagrant-ansible-routing asamoal$ ansible-galaxy install mrlesmithjr.bootstrap
+- downloading role 'bootstrap', owned by mrlesmithjr
+- downloading role from https://github.com/mrlesmithjr/ansible-bootstrap/archive/master.tar.gz
+- extracting mrlesmithjr.bootstrap to /usr/local/etc/ansible/roles/mrlesmithjr.bootstrap
+- mrlesmithjr.bootstrap was installed successfully
+leslieacbookair:vagrant-ansible-routing asamoal$ ansible-galaxy install mrlesmithjr.base
+- downloading role 'base', owned by mrlesmithjr
+- downloading role from https://github.com/mrlesmithjr/ansible-base/archive/master.tar.gz
+- extracting mrlesmithjr.base to /usr/local/etc/ansible/roles/mrlesmithjr.base
+- mrlesmithjr.base was installed successfully
+leslieacbookair:vagrant-ansible-routing asamoal$ vagrant ssh r1
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.13.0-74-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Jan 17 18:05:52 UTC 2016
+
+  System load:         0.0               IP address for eth1: 192.168.250.101
+  Usage of /:          3.5% of 39.34GB   IP address for eth2: 192.168.12.11
+  Memory usage:        50%               IP address for eth3: 192.168.14.11
+  Swap usage:          0%                IP address for eth4: 192.168.15.11
+  Processes:           73                IP address for eth5: 192.168.31.11
+  Users logged in:     0                 IP address for eth6: 1.1.1.10
+  IP address for eth0: 10.0.2.15
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+3 packages can be updated.
+3 updates are security updates.
+
+
+Last login: Sun Jan 17 18:05:57 2016 from 10.0.2.2
+vagrant@r1:~$ cd /vagrant/
+vagrant@r1:/vagrant$ ansible-playbook -i hosts bootstrap.yml 
+[DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and make sure become_method is 'sudo' (default). This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+
+PLAY ***************************************************************************
+
+TASK [setup] *******************************************************************
+ok: [r2]
+ok: [r1]
+ok: [r5]
+ok: [r4]
+ok: [r3]
+
+TASK [updating apt cache] ******************************************************
+fatal: [r2]: FAILED! => {"changed": false, "failed": true, "msg": "Could not fetch updated apt files"}
+fatal: [r4]: FAILED! => {"changed": false, "failed": true, "msg": "Could not fetch updated apt files"}
+fatal: [r1]: FAILED! => {"changed": false, "failed": true, "module_stderr": "", "module_stdout": "Traceback (most recent call last):\r\n  File \"/home/vagrant/.ansible/tmp/ansible-tmp-1453057128.54-139508416421838/apt\", line 2630, in <module>\r\n    main()\r\n  File \"/home/vagrant/.ansible/tmp/ansible-tmp-1453057128.54-139508416421838/apt\", line 603, in main\r\n    cache = apt.Cache()\r\n  File \"/usr/lib/python2.7/dist-packages/apt/cache.py\", line 107, in __init__\r\n    self.open(progress)\r\n  File \"/usr/lib/python2.7/dist-packages/apt/cache.py\", line 153, in open\r\n    self._records = apt_pkg.PackageRecords(self._cache)\r\nSystemError: E:Could not open file /var/lib/apt/lists/security.ubuntu.com_ubuntu_dists_trusty-security_main_binary-amd64_Packages - open (2: No such file or directory), E:Could not open file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-backports_multiverse_binary-amd64_Packages - open (2: No such file or directory), E:Could not open file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-backports_universe_binary-amd64_Packages - open (2: No such file or directory), E:Could not open file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-backports_restricted_binary-amd64_Packages - open (2: No such file or directory), E:Could not open file /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-backports_main_binary-amd64_Packages - open (2: No such file or directory)\r\n", "msg": "MODULE FAILURE", "parsed": false}
+fatal: [r3]: FAILED! => {"changed": false, "failed": true, "msg": "Could not fetch updated apt files"}
+ok: [r5]
+
+TASK [installing ansible pre-reqs] *********************************************
+ok: [r5] => (item=[u'python-pip', u'python-dev'])
+
+TASK [adding ansible ppa] ******************************************************
+ok: [r5]
+
+TASK [installing ansible] ******************************************************
+ok: [r5]
+
+TASK [installing ansible-galaxy roles] *****************************************
+changed: [r5] => (item=mrlesmithjr.bootstrap)
+changed: [r5] => (item=mrlesmithjr.base)
+changed: [r5] => (item=mrlesmithjr.quagga)
+
+TASK [ensuring host file exists in host_vars] **********************************
+ok: [r5 -> localhost]
+
+TASK [creating missing host_vars] **********************************************
+skipping: [r5]
+
+TASK [updating ansible_ssh_port] ***********************************************
+ok: [r5 -> localhost]
+
+TASK [updating ansible_ssh_host] ***********************************************
+ok: [r5 -> localhost]
+
+TASK [updating ansible_ssh_key] ************************************************
+ok: [r5 -> localhost]
+
+TASK [ensuring host_vars is yaml formatted] ************************************
+ok: [r5 -> localhost]
+
+PLAY RECAP *********************************************************************
+r1                         : ok=1    changed=0    unreachable=0    failed=1   
+r2                         : ok=1    changed=0    unreachable=0    failed=1   
+r3                         : ok=1    changed=0    unreachable=0    failed=1   
+r4                         : ok=1    changed=0    unreachable=0    failed=1   
+r5                         : ok=11   changed=1    unreachable=0    failed=0   
+
+vagrant@r1:/vagrant$ logout
+Connection to 127.0.0.1 closed.
+leslieacbookair:vagrant-ansible-routing asamoal$ vagrant provision 
+==> r1: Configuring cache buckets...
+==> r1: Running provisioner: ansible...
+
+PLAY [all] ******************************************************************** 
+
+GATHERING FACTS *************************************************************** 
+ok: [r1]
+
+TASK: [updating apt cache] **************************************************** 
+ok: [r1]
+
+TASK: [installing ansible pre-reqs] ******************************************* 
+ok: [r1] => (item=python-pip,python-dev)
+
+TASK: [adding ansible ppa] **************************************************** 
+ok: [r1]
+
+TASK: [installing ansible] **************************************************** 
+ok: [r1]
+
+TASK: [installing ansible-galaxy roles] *************************************** 
+changed: [r1] => (item=mrlesmithjr.bootstrap)
+changed: [r1] => (item=mrlesmithjr.base)
+changed: [r1] => (item=mrlesmithjr.quagga)
+
+TASK: [ensuring host file exists in host_vars] ******************************** 
+ok: [r1 -> localhost]
+
+TASK: [creating missing host_vars] ******************************************** 
+skipping: [r1]
+
+TASK: [updating ansible_ssh_port] ********************************************* 
+ok: [r1 -> localhost]
+
+TASK: [updating ansible_ssh_host] ********************************************* 
+ok: [r1 -> localhost]
+
+TASK: [updating ansible_ssh_key] ********************************************** 
+ok: [r1 -> localhost]
+
+TASK: [ensuring host_vars is yaml formatted] ********************************** 
+ok: [r1 -> localhost]
+
+PLAY RECAP ******************************************************************** 
+r1                         : ok=11   changed=1    unreachable=0    failed=0   
+
+==> r1: Configuring cache buckets...
+==> r2: Configuring cache buckets...
+==> r2: Running provisioner: ansible...
+
+PLAY [all] ******************************************************************** 
+
+GATHERING FACTS *************************************************************** 
+ok: [r2]
+
+TASK: [updating apt cache] **************************************************** 
+ok: [r2]
+
+TASK: [installing ansible pre-reqs] ******************************************* 
+ok: [r2] => (item=python-pip,python-dev)
+
+TASK: [adding ansible ppa] **************************************************** 
+ok: [r2]
+
+TASK: [installing ansible] **************************************************** 
+ok: [r2]
+
+TASK: [installing ansible-galaxy roles] *************************************** 
+changed: [r2] => (item=mrlesmithjr.bootstrap)
+changed: [r2] => (item=mrlesmithjr.base)
+changed: [r2] => (item=mrlesmithjr.quagga)
+
+TASK: [ensuring host file exists in host_vars] ******************************** 
+ok: [r2 -> localhost]
+
+TASK: [creating missing host_vars] ******************************************** 
+skipping: [r2]
+
+TASK: [updating ansible_ssh_port] ********************************************* 
+ok: [r2 -> localhost]
+
+TASK: [updating ansible_ssh_host] ********************************************* 
+ok: [r2 -> localhost]
+
+TASK: [updating ansible_ssh_key] ********************************************** 
+ok: [r2 -> localhost]
+
+TASK: [ensuring host_vars is yaml formatted] ********************************** 
+ok: [r2 -> localhost]
+
+PLAY RECAP ******************************************************************** 
+r2                         : ok=11   changed=1    unreachable=0    failed=0   
+
+==> r2: Configuring cache buckets...
+==> r3: Configuring cache buckets...
+==> r3: Running provisioner: ansible...
+
+PLAY [all] ******************************************************************** 
+
+GATHERING FACTS *************************************************************** 
+ok: [r3]
+
+TASK: [updating apt cache] **************************************************** 
+ok: [r3]
+
+TASK: [installing ansible pre-reqs] ******************************************* 
+ok: [r3] => (item=python-pip,python-dev)
+
+TASK: [adding ansible ppa] **************************************************** 
+ok: [r3]
+
+TASK: [installing ansible] **************************************************** 
+ok: [r3]
+
+TASK: [installing ansible-galaxy roles] *************************************** 
+changed: [r3] => (item=mrlesmithjr.bootstrap)
+changed: [r3] => (item=mrlesmithjr.base)
+changed: [r3] => (item=mrlesmithjr.quagga)
+
+TASK: [ensuring host file exists in host_vars] ******************************** 
+ok: [r3 -> localhost]
+
+TASK: [creating missing host_vars] ******************************************** 
+skipping: [r3]
+
+TASK: [updating ansible_ssh_port] ********************************************* 
+ok: [r3 -> localhost]
+
+TASK: [updating ansible_ssh_host] ********************************************* 
+ok: [r3 -> localhost]
+
+TASK: [updating ansible_ssh_key] ********************************************** 
+ok: [r3 -> localhost]
+
+TASK: [ensuring host_vars is yaml formatted] ********************************** 
+ok: [r3 -> localhost]
+
+PLAY RECAP ******************************************************************** 
+r3                         : ok=11   changed=1    unreachable=0    failed=0   
+
+==> r3: Configuring cache buckets...
+==> r4: Configuring cache buckets...
+==> r4: Running provisioner: ansible...
+
+PLAY [all] ******************************************************************** 
+
+GATHERING FACTS *************************************************************** 
+ok: [r4]
+
+TASK: [updating apt cache] **************************************************** 
+ok: [r4]
+
+TASK: [installing ansible pre-reqs] ******************************************* 
+ok: [r4] => (item=python-pip,python-dev)
+
+TASK: [adding ansible ppa] **************************************************** 
+ok: [r4]
+
+TASK: [installing ansible] **************************************************** 
+ok: [r4]
+
+TASK: [installing ansible-galaxy roles] *************************************** 
+changed: [r4] => (item=mrlesmithjr.bootstrap)
+changed: [r4] => (item=mrlesmithjr.base)
+changed: [r4] => (item=mrlesmithjr.quagga)
+
+TASK: [ensuring host file exists in host_vars] ******************************** 
+ok: [r4 -> localhost]
+
+TASK: [creating missing host_vars] ******************************************** 
+skipping: [r4]
+
+TASK: [updating ansible_ssh_port] ********************************************* 
+ok: [r4 -> localhost]
+
+TASK: [updating ansible_ssh_host] ********************************************* 
+ok: [r4 -> localhost]
+
+TASK: [updating ansible_ssh_key] ********************************************** 
+ok: [r4 -> localhost]
+
+TASK: [ensuring host_vars is yaml formatted] ********************************** 
+ok: [r4 -> localhost]
+
+PLAY RECAP ******************************************************************** 
+r4                         : ok=11   changed=1    unreachable=0    failed=0   
+
+==> r4: Configuring cache buckets...
+==> r5: Configuring cache buckets...
+==> r5: Running provisioner: ansible...
+
+PLAY [all] ******************************************************************** 
+
+GATHERING FACTS *************************************************************** 
+ok: [r5]
+
+TASK: [updating apt cache] **************************************************** 
+ok: [r5]
+
+TASK: [installing ansible pre-reqs] ******************************************* 
+ok: [r5] => (item=python-pip,python-dev)
+
+TASK: [adding ansible ppa] **************************************************** 
+ok: [r5]
+
+TASK: [installing ansible] **************************************************** 
+ok: [r5]
+
+TASK: [installing ansible-galaxy roles] *************************************** 
+changed: [r5] => (item=mrlesmithjr.bootstrap)
+changed: [r5] => (item=mrlesmithjr.base)
+changed: [r5] => (item=mrlesmithjr.quagga)
+
+TASK: [ensuring host file exists in host_vars] ******************************** 
+ok: [r5 -> localhost]
+
+TASK: [creating missing host_vars] ******************************************** 
+skipping: [r5]
+
+TASK: [updating ansible_ssh_port] ********************************************* 
+ok: [r5 -> localhost]
+
+TASK: [updating ansible_ssh_host] ********************************************* 
+ok: [r5 -> localhost]
+
+TASK: [updating ansible_ssh_key] ********************************************** 
+ok: [r5 -> localhost]
+
+TASK: [ensuring host_vars is yaml formatted] ********************************** 
+ok: [r5 -> localhost]
+
+PLAY RECAP ******************************************************************** 
+r5                         : ok=11   changed=1    unreachable=0    failed=0   
+
+==> r5: Configuring cache buckets...
+leslieacbookair:vagrant-ansible-routing asamoal$ vagrant ssh r1
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.13.0-74-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Jan 17 19:00:25 UTC 2016
+
+  System load:         0.13              IP address for eth1: 192.168.250.101
+  Usage of /:          3.5% of 39.34GB   IP address for eth2: 192.168.12.11
+  Memory usage:        52%               IP address for eth3: 192.168.14.11
+  Swap usage:          0%                IP address for eth4: 192.168.15.11
+  Processes:           76                IP address for eth5: 192.168.31.11
+  Users logged in:     0                 IP address for eth6: 1.1.1.10
+  IP address for eth0: 10.0.2.15
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+4 packages can be updated.
+3 updates are security updates.
+
+
+Last login: Sun Jan 17 19:00:43 2016 from 192.168.250.1
+vagrant@r1:~$ cd /vagrant/
+vagrant@r1:/vagrant$ ansible-playbook -i hosts bootstrap.yml 
+[DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and make sure become_method is 'sudo' (default). This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+
+PLAY ***************************************************************************
+
+TASK [setup] *******************************************************************
+ok: [r3]
+ok: [r5]
+ok: [r4]
+ok: [r2]
+ok: [r1]
+
+TASK [updating apt cache] ******************************************************
+ok: [r2]
+ok: [r4]
+ok: [r3]
+ok: [r5]
+ok: [r1]
+
+TASK [installing ansible pre-reqs] *********************************************
+ok: [r2] => (item=[u'python-pip', u'python-dev'])
+ok: [r3] => (item=[u'python-pip', u'python-dev'])
+ok: [r4] => (item=[u'python-pip', u'python-dev'])
+ok: [r5] => (item=[u'python-pip', u'python-dev'])
+ok: [r1] => (item=[u'python-pip', u'python-dev'])
+
+TASK [adding ansible ppa] ******************************************************
+ok: [r2]
+ok: [r3]
+ok: [r4]
+ok: [r5]
+ok: [r1]
+
+TASK [installing ansible] ******************************************************
+ok: [r2]
+ok: [r3]
+ok: [r4]
+ok: [r5]
+ok: [r1]
+
+TASK [installing ansible-galaxy roles] *****************************************
+changed: [r5] => (item=mrlesmithjr.bootstrap)
+changed: [r5] => (item=mrlesmithjr.base)
+changed: [r5] => (item=mrlesmithjr.quagga)
+changed: [r2] => (item=mrlesmithjr.bootstrap)
+changed: [r2] => (item=mrlesmithjr.base)
+changed: [r2] => (item=mrlesmithjr.quagga)
+changed: [r4] => (item=mrlesmithjr.bootstrap)
+changed: [r4] => (item=mrlesmithjr.base)
+changed: [r4] => (item=mrlesmithjr.quagga)
+changed: [r3] => (item=mrlesmithjr.bootstrap)
+changed: [r3] => (item=mrlesmithjr.base)
+changed: [r3] => (item=mrlesmithjr.quagga)
+changed: [r1] => (item=mrlesmithjr.bootstrap)
+changed: [r1] => (item=mrlesmithjr.base)
+changed: [r1] => (item=mrlesmithjr.quagga)
+
+TASK [ensuring host file exists in host_vars] **********************************
+ok: [r1 -> localhost]
+ok: [r2 -> localhost]
+ok: [r3 -> localhost]
+ok: [r4 -> localhost]
+ok: [r5 -> localhost]
+
+TASK [creating missing host_vars] **********************************************
+skipping: [r1]
+skipping: [r2]
+skipping: [r3]
+skipping: [r4]
+skipping: [r5]
+
+TASK [updating ansible_ssh_port] ***********************************************
+ok: [r1 -> localhost]
+ok: [r2 -> localhost]
+ok: [r3 -> localhost]
+ok: [r4 -> localhost]
+ok: [r5 -> localhost]
+
+TASK [updating ansible_ssh_host] ***********************************************
+ok: [r1 -> localhost]
+ok: [r2 -> localhost]
+ok: [r3 -> localhost]
+ok: [r4 -> localhost]
+ok: [r5 -> localhost]
+
+TASK [updating ansible_ssh_key] ************************************************
+ok: [r1 -> localhost]
+ok: [r2 -> localhost]
+ok: [r3 -> localhost]
+ok: [r4 -> localhost]
+ok: [r5 -> localhost]
+
+TASK [ensuring host_vars is yaml formatted] ************************************
+ok: [r1 -> localhost]
+ok: [r2 -> localhost]
+ok: [r3 -> localhost]
+ok: [r4 -> localhost]
+ok: [r5 -> localhost]
+
+PLAY RECAP *********************************************************************
+r1                         : ok=11   changed=1    unreachable=0    failed=0   
+r2                         : ok=11   changed=1    unreachable=0    failed=0   
+r3                         : ok=11   changed=1    unreachable=0    failed=0   
+r4                         : ok=11   changed=1    unreachable=0    failed=0   
+r5                         : ok=11   changed=1    unreachable=0    failed=0   
+
+vagrant@r1:/vagrant$ 
