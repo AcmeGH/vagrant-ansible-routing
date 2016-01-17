@@ -1,0 +1,1819 @@
+leslieacbookair:vagrant-ansible-routing asamoal$ subl bootstrap.yml 
+leslieacbookair:vagrant-ansible-routing asamoal$ vagrant up
+Bringing machine 'r1' up with 'virtualbox' provider...
+Bringing machine 'r2' up with 'virtualbox' provider...
+Bringing machine 'r3' up with 'virtualbox' provider...
+Bringing machine 'r4' up with 'virtualbox' provider...
+Bringing machine 'r5' up with 'virtualbox' provider...
+==> r1: Box 'ubuntu/trusty64' could not be found. Attempting to find and install...
+    r1: Box Provider: virtualbox
+    r1: Box Version: >= 0
+==> r1: Loading metadata for box 'ubuntu/trusty64'
+    r1: URL: https://atlas.hashicorp.com/ubuntu/trusty64
+==> r1: Adding box 'ubuntu/trusty64' (v20160108.0.1) for provider: virtualbox
+    r1: Downloading: https://atlas.hashicorp.com/ubuntu/boxes/trusty64/versions/20160108.0.1/providers/virtualbox.box
+An error occurred while downloading the remote file. The error
+message, if any, is reproduced below. Please fix this error and try
+again.
+
+Recv failure: Operation timed out
+leslieacbookair:vagrant-ansible-routing asamoal$ vagrant up
+Bringing machine 'r1' up with 'virtualbox' provider...
+Bringing machine 'r2' up with 'virtualbox' provider...
+Bringing machine 'r3' up with 'virtualbox' provider...
+Bringing machine 'r4' up with 'virtualbox' provider...
+Bringing machine 'r5' up with 'virtualbox' provider...
+==> r1: Box 'ubuntu/trusty64' could not be found. Attempting to find and install...
+    r1: Box Provider: virtualbox
+    r1: Box Version: >= 0
+==> r1: Loading metadata for box 'ubuntu/trusty64'
+    r1: URL: https://atlas.hashicorp.com/ubuntu/trusty64
+==> r1: Adding box 'ubuntu/trusty64' (v20160108.0.1) for provider: virtualbox
+    r1: Downloading: https://atlas.hashicorp.com/ubuntu/boxes/trusty64/versions/20160108.0.1/providers/virtualbox.box
+==> r1: Box download is resuming from prior download progress
+==> r1: Successfully added box 'ubuntu/trusty64' (v20160108.0.1) for 'virtualbox'!
+==> r1: Importing base box 'ubuntu/trusty64'...
+==> r1: Matching MAC address for NAT networking...
+==> r1: Checking if box 'ubuntu/trusty64' is up to date...
+==> r1: Setting the name of the VM: vagrant-ansible-routing_r1_1452988764172_84619
+==> r1: Clearing any previously set forwarded ports...
+==> r1: Clearing any previously set network interfaces...
+==> r1: Preparing network interfaces based on configuration...
+    r1: Adapter 1: nat
+    r1: Adapter 2: hostonly
+    r1: Adapter 3: intnet
+    r1: Adapter 4: intnet
+    r1: Adapter 5: intnet
+    r1: Adapter 6: intnet
+    r1: Adapter 7: intnet
+==> r1: Forwarding ports...
+    r1: 22 => 2222 (adapter 1)
+==> r1: Running 'pre-boot' VM customizations...
+==> r1: Booting VM...
+==> r1: Waiting for machine to boot. This may take a few minutes...
+    r1: SSH address: 127.0.0.1:2222
+    r1: SSH username: vagrant
+    r1: SSH auth method: private key
+    r1: Warning: Connection timeout. Retrying...
+    r1: Warning: Remote connection disconnect. Retrying...
+    r1: 
+    r1: Vagrant insecure key detected. Vagrant will automatically replace
+    r1: this with a newly generated keypair for better security.
+    r1: 
+    r1: Inserting generated public key within guest...
+    r1: Removing insecure key from the guest if it's present...
+    r1: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> r1: Machine booted and ready!
+==> r1: Checking for guest additions in VM...
+    r1: The guest additions on this VM do not match the installed version of
+    r1: VirtualBox! In most cases this is fine, but in rare cases it can
+    r1: prevent things such as shared folders from working properly. If you see
+    r1: shared folder errors, please make sure the guest additions within the
+    r1: virtual machine match the version of VirtualBox you have installed on
+    r1: your host and reload your VM.
+    r1: 
+    r1: Guest Additions Version: 4.3.34
+    r1: VirtualBox Version: 5.0
+==> r1: Setting hostname...
+==> r1: Configuring and enabling network interfaces...
+==> r1: Mounting shared folders...
+    r1: /vagrant => /Users/asamoal/~Developer/GitLocal/vagrant-ansible-routing
+==> r1: Running provisioner: ansible...
+
+PLAY [all] ******************************************************************** 
+
+GATHERING FACTS *************************************************************** 
+ok: [r1]
+
+TASK: [updating apt cache] **************************************************** 
+ok: [r1]
+
+TASK: [installing ansible pre-reqs] ******************************************* 
+changed: [r1] => (item=python-pip,python-dev)
+
+TASK: [adding ansible ppa] **************************************************** 
+changed: [r1]
+
+TASK: [installing ansible] **************************************************** 
+changed: [r1]
+
+TASK: [installing ansible-galaxy roles] *************************************** 
+changed: [r1] => (item=mrlesmithjr.bootstrap)
+changed: [r1] => (item=mrlesmithjr.base)
+changed: [r1] => (item=mrlesmithjr.quagga)
+
+TASK: [ensuring host file exists in host_vars] ******************************** 
+ok: [r1 -> localhost]
+
+TASK: [creating missing host_vars] ******************************************** 
+skipping: [r1]
+
+TASK: [updating ansible_ssh_port] ********************************************* 
+ok: [r1 -> localhost]
+
+TASK: [updating ansible_ssh_host] ********************************************* 
+ok: [r1 -> localhost]
+
+TASK: [updating ansible_ssh_key] ********************************************** 
+ok: [r1 -> localhost]
+
+TASK: [ensuring host_vars is yaml formatted] ********************************** 
+ok: [r1 -> localhost]
+
+PLAY RECAP ******************************************************************** 
+r1                         : ok=11   changed=4    unreachable=0    failed=0   
+
+==> r2: Box 'ubuntu/trusty64' could not be found. Attempting to find and install...
+    r2: Box Provider: virtualbox
+    r2: Box Version: >= 0
+==> r2: Loading metadata for box 'ubuntu/trusty64'
+    r2: URL: https://atlas.hashicorp.com/ubuntu/trusty64
+==> r2: Adding box 'ubuntu/trusty64' (v20160108.0.1) for provider: virtualbox
+==> r2: Importing base box 'ubuntu/trusty64'...
+==> r2: Matching MAC address for NAT networking...
+==> r2: Checking if box 'ubuntu/trusty64' is up to date...
+==> r2: Setting the name of the VM: vagrant-ansible-routing_r2_1452989002511_4279
+==> r2: Clearing any previously set forwarded ports...
+==> r2: Fixed port collision for 22 => 2222. Now on port 2200.
+==> r2: Clearing any previously set network interfaces...
+==> r2: Preparing network interfaces based on configuration...
+    r2: Adapter 1: nat
+    r2: Adapter 2: hostonly
+    r2: Adapter 3: intnet
+    r2: Adapter 4: intnet
+    r2: Adapter 5: intnet
+==> r2: Forwarding ports...
+    r2: 22 => 2200 (adapter 1)
+==> r2: Running 'pre-boot' VM customizations...
+==> r2: Booting VM...
+==> r2: Waiting for machine to boot. This may take a few minutes...
+    r2: SSH address: 127.0.0.1:2200
+    r2: SSH username: vagrant
+    r2: SSH auth method: private key
+    r2: Warning: Connection timeout. Retrying...
+    r2: Warning: Remote connection disconnect. Retrying...
+    r2: 
+    r2: Vagrant insecure key detected. Vagrant will automatically replace
+    r2: this with a newly generated keypair for better security.
+    r2: 
+    r2: Inserting generated public key within guest...
+    r2: Removing insecure key from the guest if it's present...
+    r2: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> r2: Machine booted and ready!
+==> r2: Checking for guest additions in VM...
+    r2: The guest additions on this VM do not match the installed version of
+    r2: VirtualBox! In most cases this is fine, but in rare cases it can
+    r2: prevent things such as shared folders from working properly. If you see
+    r2: shared folder errors, please make sure the guest additions within the
+    r2: virtual machine match the version of VirtualBox you have installed on
+    r2: your host and reload your VM.
+    r2: 
+    r2: Guest Additions Version: 4.3.34
+    r2: VirtualBox Version: 5.0
+==> r2: Setting hostname...
+==> r2: Configuring and enabling network interfaces...
+==> r2: Mounting shared folders...
+    r2: /vagrant => /Users/asamoal/~Developer/GitLocal/vagrant-ansible-routing
+==> r2: Running provisioner: ansible...
+
+PLAY [all] ******************************************************************** 
+
+GATHERING FACTS *************************************************************** 
+ok: [r2]
+
+TASK: [updating apt cache] **************************************************** 
+ok: [r2]
+
+TASK: [installing ansible pre-reqs] ******************************************* 
+changed: [r2] => (item=python-pip,python-dev)
+
+TASK: [adding ansible ppa] **************************************************** 
+changed: [r2]
+
+TASK: [installing ansible] **************************************************** 
+changed: [r2]
+
+TASK: [installing ansible-galaxy roles] *************************************** 
+changed: [r2] => (item=mrlesmithjr.bootstrap)
+changed: [r2] => (item=mrlesmithjr.base)
+changed: [r2] => (item=mrlesmithjr.quagga)
+
+TASK: [ensuring host file exists in host_vars] ******************************** 
+ok: [r2 -> localhost]
+
+TASK: [creating missing host_vars] ******************************************** 
+skipping: [r2]
+
+TASK: [updating ansible_ssh_port] ********************************************* 
+ok: [r2 -> localhost]
+
+TASK: [updating ansible_ssh_host] ********************************************* 
+ok: [r2 -> localhost]
+
+TASK: [updating ansible_ssh_key] ********************************************** 
+ok: [r2 -> localhost]
+
+TASK: [ensuring host_vars is yaml formatted] ********************************** 
+ok: [r2 -> localhost]
+
+PLAY RECAP ******************************************************************** 
+r2                         : ok=11   changed=4    unreachable=0    failed=0   
+
+==> r3: Box 'ubuntu/trusty64' could not be found. Attempting to find and install...
+    r3: Box Provider: virtualbox
+    r3: Box Version: >= 0
+==> r3: Loading metadata for box 'ubuntu/trusty64'
+    r3: URL: https://atlas.hashicorp.com/ubuntu/trusty64
+==> r3: Adding box 'ubuntu/trusty64' (v20160108.0.1) for provider: virtualbox
+==> r3: Importing base box 'ubuntu/trusty64'...
+==> r3: Matching MAC address for NAT networking...
+==> r3: Checking if box 'ubuntu/trusty64' is up to date...
+==> r3: Setting the name of the VM: vagrant-ansible-routing_r3_1452989200818_67690
+==> r3: Clearing any previously set forwarded ports...
+==> r3: Fixed port collision for 22 => 2222. Now on port 2201.
+==> r3: Clearing any previously set network interfaces...
+==> r3: Preparing network interfaces based on configuration...
+    r3: Adapter 1: nat
+    r3: Adapter 2: hostonly
+    r3: Adapter 3: intnet
+    r3: Adapter 4: intnet
+    r3: Adapter 5: intnet
+==> r3: Forwarding ports...
+    r3: 22 => 2201 (adapter 1)
+==> r3: Running 'pre-boot' VM customizations...
+==> r3: Booting VM...
+==> r3: Waiting for machine to boot. This may take a few minutes...
+    r3: SSH address: 127.0.0.1:2201
+    r3: SSH username: vagrant
+    r3: SSH auth method: private key
+    r3: Warning: Connection timeout. Retrying...
+    r3: Warning: Remote connection disconnect. Retrying...
+    r3: 
+    r3: Vagrant insecure key detected. Vagrant will automatically replace
+    r3: this with a newly generated keypair for better security.
+    r3: 
+    r3: Inserting generated public key within guest...
+    r3: Removing insecure key from the guest if it's present...
+    r3: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> r3: Machine booted and ready!
+==> r3: Checking for guest additions in VM...
+    r3: The guest additions on this VM do not match the installed version of
+    r3: VirtualBox! In most cases this is fine, but in rare cases it can
+    r3: prevent things such as shared folders from working properly. If you see
+    r3: shared folder errors, please make sure the guest additions within the
+    r3: virtual machine match the version of VirtualBox you have installed on
+    r3: your host and reload your VM.
+    r3: 
+    r3: Guest Additions Version: 4.3.34
+    r3: VirtualBox Version: 5.0
+==> r3: Setting hostname...
+==> r3: Configuring and enabling network interfaces...
+==> r3: Mounting shared folders...
+    r3: /vagrant => /Users/asamoal/~Developer/GitLocal/vagrant-ansible-routing
+==> r3: Running provisioner: ansible...
+
+PLAY [all] ******************************************************************** 
+
+GATHERING FACTS *************************************************************** 
+ok: [r3]
+
+TASK: [updating apt cache] **************************************************** 
+ok: [r3]
+
+TASK: [installing ansible pre-reqs] ******************************************* 
+changed: [r3] => (item=python-pip,python-dev)
+
+TASK: [adding ansible ppa] **************************************************** 
+changed: [r3]
+
+TASK: [installing ansible] **************************************************** 
+changed: [r3]
+
+TASK: [installing ansible-galaxy roles] *************************************** 
+changed: [r3] => (item=mrlesmithjr.bootstrap)
+changed: [r3] => (item=mrlesmithjr.base)
+changed: [r3] => (item=mrlesmithjr.quagga)
+
+TASK: [ensuring host file exists in host_vars] ******************************** 
+ok: [r3 -> localhost]
+
+TASK: [creating missing host_vars] ******************************************** 
+skipping: [r3]
+
+TASK: [updating ansible_ssh_port] ********************************************* 
+ok: [r3 -> localhost]
+
+TASK: [updating ansible_ssh_host] ********************************************* 
+ok: [r3 -> localhost]
+
+TASK: [updating ansible_ssh_key] ********************************************** 
+ok: [r3 -> localhost]
+
+TASK: [ensuring host_vars is yaml formatted] ********************************** 
+ok: [r3 -> localhost]
+
+PLAY RECAP ******************************************************************** 
+r3                         : ok=11   changed=4    unreachable=0    failed=0   
+
+==> r4: Box 'ubuntu/trusty64' could not be found. Attempting to find and install...
+    r4: Box Provider: virtualbox
+    r4: Box Version: >= 0
+==> r4: Loading metadata for box 'ubuntu/trusty64'
+    r4: URL: https://atlas.hashicorp.com/ubuntu/trusty64
+==> r4: Adding box 'ubuntu/trusty64' (v20160108.0.1) for provider: virtualbox
+==> r4: Importing base box 'ubuntu/trusty64'...
+==> r4: Matching MAC address for NAT networking...
+==> r4: Checking if box 'ubuntu/trusty64' is up to date...
+==> r4: Setting the name of the VM: vagrant-ansible-routing_r4_1452989406732_32683
+==> r4: Clearing any previously set forwarded ports...
+==> r4: Fixed port collision for 22 => 2222. Now on port 2202.
+==> r4: Clearing any previously set network interfaces...
+==> r4: Preparing network interfaces based on configuration...
+    r4: Adapter 1: nat
+    r4: Adapter 2: hostonly
+    r4: Adapter 3: intnet
+    r4: Adapter 4: intnet
+    r4: Adapter 5: intnet
+    r4: Adapter 6: intnet
+==> r4: Forwarding ports...
+    r4: 22 => 2202 (adapter 1)
+==> r4: Running 'pre-boot' VM customizations...
+==> r4: Booting VM...
+==> r4: Waiting for machine to boot. This may take a few minutes...
+    r4: SSH address: 127.0.0.1:2202
+    r4: SSH username: vagrant
+    r4: SSH auth method: private key
+    r4: Warning: Connection timeout. Retrying...
+    r4: Warning: Remote connection disconnect. Retrying...
+    r4: 
+    r4: Vagrant insecure key detected. Vagrant will automatically replace
+    r4: this with a newly generated keypair for better security.
+    r4: 
+    r4: Inserting generated public key within guest...
+    r4: Removing insecure key from the guest if it's present...
+    r4: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> r4: Machine booted and ready!
+==> r4: Checking for guest additions in VM...
+    r4: The guest additions on this VM do not match the installed version of
+    r4: VirtualBox! In most cases this is fine, but in rare cases it can
+    r4: prevent things such as shared folders from working properly. If you see
+    r4: shared folder errors, please make sure the guest additions within the
+    r4: virtual machine match the version of VirtualBox you have installed on
+    r4: your host and reload your VM.
+    r4: 
+    r4: Guest Additions Version: 4.3.34
+    r4: VirtualBox Version: 5.0
+==> r4: Setting hostname...
+==> r4: Configuring and enabling network interfaces...
+==> r4: Mounting shared folders...
+    r4: /vagrant => /Users/asamoal/~Developer/GitLocal/vagrant-ansible-routing
+==> r4: Running provisioner: ansible...
+
+PLAY [all] ******************************************************************** 
+
+GATHERING FACTS *************************************************************** 
+ok: [r4]
+
+TASK: [updating apt cache] **************************************************** 
+ok: [r4]
+
+TASK: [installing ansible pre-reqs] ******************************************* 
+changed: [r4] => (item=python-pip,python-dev)
+
+TASK: [adding ansible ppa] **************************************************** 
+changed: [r4]
+
+TASK: [installing ansible] **************************************************** 
+changed: [r4]
+
+TASK: [installing ansible-galaxy roles] *************************************** 
+changed: [r4] => (item=mrlesmithjr.bootstrap)
+changed: [r4] => (item=mrlesmithjr.base)
+changed: [r4] => (item=mrlesmithjr.quagga)
+
+TASK: [ensuring host file exists in host_vars] ******************************** 
+ok: [r4 -> localhost]
+
+TASK: [creating missing host_vars] ******************************************** 
+skipping: [r4]
+
+TASK: [updating ansible_ssh_port] ********************************************* 
+ok: [r4 -> localhost]
+
+TASK: [updating ansible_ssh_host] ********************************************* 
+ok: [r4 -> localhost]
+
+TASK: [updating ansible_ssh_key] ********************************************** 
+ok: [r4 -> localhost]
+
+TASK: [ensuring host_vars is yaml formatted] ********************************** 
+ok: [r4 -> localhost]
+
+PLAY RECAP ******************************************************************** 
+r4                         : ok=11   changed=4    unreachable=0    failed=0   
+
+==> r5: Box 'ubuntu/trusty64' could not be found. Attempting to find and install...
+    r5: Box Provider: virtualbox
+    r5: Box Version: >= 0
+==> r5: Loading metadata for box 'ubuntu/trusty64'
+    r5: URL: https://atlas.hashicorp.com/ubuntu/trusty64
+==> r5: Adding box 'ubuntu/trusty64' (v20160108.0.1) for provider: virtualbox
+==> r5: Importing base box 'ubuntu/trusty64'...
+
+  [Restored 2/17 Jan 2016, 16:04:18]
+Last login: Sun Jan 17 16:03:48 on console
+leslieacbookair:vagrant-ansible-routing asamoal$ vagrant plugin install vagrant-cachier
+Installing the 'vagrant-cachier' plugin. This can take a few minutes...
+Installed the plugin 'vagrant-cachier (1.2.1)'!
+leslieacbookair:vagrant-ansible-routing asamoal$ vagrant plugin search vagrant-proxy
+Usage: vagrant plugin <command> [<args>]
+
+Available subcommands:
+     install
+     license
+     list
+     uninstall
+     update
+
+For help on any individual command run `vagrant plugin COMMAND -h`
+
+leslieacbookair:vagrant-ansible-routing asamoal$ vagrant plugin list
+vagrant-cachier (1.2.1)
+vagrant-share (1.1.5, system)
+leslieacbookair:vagrant-ansible-routing asamoal$ vagrant up
+Bringing machine 'r1' up with 'virtualbox' provider...
+Bringing machine 'r2' up with 'virtualbox' provider...
+Bringing machine 'r3' up with 'virtualbox' provider...
+Bringing machine 'r4' up with 'virtualbox' provider...
+Bringing machine 'r5' up with 'virtualbox' provider...
+==> r1: Checking if box 'ubuntu/trusty64' is up to date...
+==> r1: Clearing any previously set forwarded ports...
+==> r1: Clearing any previously set network interfaces...
+==> r1: Preparing network interfaces based on configuration...
+    r1: Adapter 1: nat
+    r1: Adapter 2: hostonly
+    r1: Adapter 3: intnet
+    r1: Adapter 4: intnet
+    r1: Adapter 5: intnet
+    r1: Adapter 6: intnet
+    r1: Adapter 7: intnet
+==> r1: Forwarding ports...
+    r1: 22 => 2222 (adapter 1)
+==> r1: Running 'pre-boot' VM customizations...
+==> r1: Booting VM...
+==> r1: Waiting for machine to boot. This may take a few minutes...
+    r1: SSH address: 127.0.0.1:2222
+    r1: SSH username: vagrant
+    r1: SSH auth method: private key
+    r1: Warning: Connection timeout. Retrying...
+==> r1: Machine booted and ready!
+==> r1: Checking for guest additions in VM...
+    r1: The guest additions on this VM do not match the installed version of
+    r1: VirtualBox! In most cases this is fine, but in rare cases it can
+    r1: prevent things such as shared folders from working properly. If you see
+    r1: shared folder errors, please make sure the guest additions within the
+    r1: virtual machine match the version of VirtualBox you have installed on
+    r1: your host and reload your VM.
+    r1: 
+    r1: Guest Additions Version: 4.3.34
+    r1: VirtualBox Version: 5.0
+==> r1: Setting hostname...
+==> r1: Configuring and enabling network interfaces...
+==> r1: Mounting shared folders...
+    r1: /vagrant => /Users/asamoal/~Developer/GitLocal/vagrant-ansible-routing
+    r1: /tmp/vagrant-cache => /Users/asamoal/.vagrant.d/cache/ubuntu/trusty64
+==> r1: Configuring cache buckets...
+==> r1: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> r1: flag to force provisioning. Provisioners marked to run always will still run.
+==> r2: Checking if box 'ubuntu/trusty64' is up to date...
+==> r2: Clearing any previously set forwarded ports...
+==> r2: Fixed port collision for 22 => 2222. Now on port 2200.
+==> r2: Clearing any previously set network interfaces...
+==> r2: Preparing network interfaces based on configuration...
+    r2: Adapter 1: nat
+    r2: Adapter 2: hostonly
+    r2: Adapter 3: intnet
+    r2: Adapter 4: intnet
+    r2: Adapter 5: intnet
+==> r2: Forwarding ports...
+    r2: 22 => 2200 (adapter 1)
+==> r2: Running 'pre-boot' VM customizations...
+==> r2: Booting VM...
+==> r2: Waiting for machine to boot. This may take a few minutes...
+    r2: SSH address: 127.0.0.1:2200
+    r2: SSH username: vagrant
+    r2: SSH auth method: private key
+    r2: Warning: Connection timeout. Retrying...
+==> r2: Machine booted and ready!
+==> r2: Checking for guest additions in VM...
+    r2: The guest additions on this VM do not match the installed version of
+    r2: VirtualBox! In most cases this is fine, but in rare cases it can
+    r2: prevent things such as shared folders from working properly. If you see
+    r2: shared folder errors, please make sure the guest additions within the
+    r2: virtual machine match the version of VirtualBox you have installed on
+    r2: your host and reload your VM.
+    r2: 
+    r2: Guest Additions Version: 4.3.34
+    r2: VirtualBox Version: 5.0
+==> r2: Setting hostname...
+==> r2: Configuring and enabling network interfaces...
+==> r2: Mounting shared folders...
+    r2: /vagrant => /Users/asamoal/~Developer/GitLocal/vagrant-ansible-routing
+    r2: /tmp/vagrant-cache => /Users/asamoal/.vagrant.d/cache/ubuntu/trusty64
+==> r2: Configuring cache buckets...
+==> r2: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> r2: flag to force provisioning. Provisioners marked to run always will still run.
+==> r3: Checking if box 'ubuntu/trusty64' is up to date...
+==> r3: Clearing any previously set forwarded ports...
+==> r3: Fixed port collision for 22 => 2222. Now on port 2201.
+==> r3: Clearing any previously set network interfaces...
+==> r3: Preparing network interfaces based on configuration...
+    r3: Adapter 1: nat
+    r3: Adapter 2: hostonly
+    r3: Adapter 3: intnet
+    r3: Adapter 4: intnet
+    r3: Adapter 5: intnet
+==> r3: Forwarding ports...
+    r3: 22 => 2201 (adapter 1)
+==> r3: Running 'pre-boot' VM customizations...
+==> r3: Booting VM...
+==> r3: Waiting for machine to boot. This may take a few minutes...
+    r3: SSH address: 127.0.0.1:2201
+    r3: SSH username: vagrant
+    r3: SSH auth method: private key
+    r3: Warning: Connection timeout. Retrying...
+==> r3: Machine booted and ready!
+==> r3: Checking for guest additions in VM...
+    r3: The guest additions on this VM do not match the installed version of
+    r3: VirtualBox! In most cases this is fine, but in rare cases it can
+    r3: prevent things such as shared folders from working properly. If you see
+    r3: shared folder errors, please make sure the guest additions within the
+    r3: virtual machine match the version of VirtualBox you have installed on
+    r3: your host and reload your VM.
+    r3: 
+    r3: Guest Additions Version: 4.3.34
+    r3: VirtualBox Version: 5.0
+==> r3: Setting hostname...
+==> r3: Configuring and enabling network interfaces...
+==> r3: Mounting shared folders...
+    r3: /vagrant => /Users/asamoal/~Developer/GitLocal/vagrant-ansible-routing
+    r3: /tmp/vagrant-cache => /Users/asamoal/.vagrant.d/cache/ubuntu/trusty64
+==> r3: Configuring cache buckets...
+==> r3: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> r3: flag to force provisioning. Provisioners marked to run always will still run.
+==> r4: Checking if box 'ubuntu/trusty64' is up to date...
+==> r4: Clearing any previously set forwarded ports...
+==> r4: Fixed port collision for 22 => 2222. Now on port 2202.
+==> r4: Clearing any previously set network interfaces...
+==> r4: Preparing network interfaces based on configuration...
+    r4: Adapter 1: nat
+    r4: Adapter 2: hostonly
+    r4: Adapter 3: intnet
+    r4: Adapter 4: intnet
+    r4: Adapter 5: intnet
+    r4: Adapter 6: intnet
+==> r4: Forwarding ports...
+    r4: 22 => 2202 (adapter 1)
+==> r4: Running 'pre-boot' VM customizations...
+==> r4: Booting VM...
+==> r4: Waiting for machine to boot. This may take a few minutes...
+    r4: SSH address: 127.0.0.1:2202
+    r4: SSH username: vagrant
+    r4: SSH auth method: private key
+    r4: Warning: Connection timeout. Retrying...
+==> r4: Machine booted and ready!
+==> r4: Checking for guest additions in VM...
+    r4: The guest additions on this VM do not match the installed version of
+    r4: VirtualBox! In most cases this is fine, but in rare cases it can
+    r4: prevent things such as shared folders from working properly. If you see
+    r4: shared folder errors, please make sure the guest additions within the
+    r4: virtual machine match the version of VirtualBox you have installed on
+    r4: your host and reload your VM.
+    r4: 
+    r4: Guest Additions Version: 4.3.34
+    r4: VirtualBox Version: 5.0
+==> r4: Setting hostname...
+==> r4: Configuring and enabling network interfaces...
+==> r4: Mounting shared folders...
+    r4: /vagrant => /Users/asamoal/~Developer/GitLocal/vagrant-ansible-routing
+    r4: /tmp/vagrant-cache => /Users/asamoal/.vagrant.d/cache/ubuntu/trusty64
+==> r4: Configuring cache buckets...
+==> r4: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> r4: flag to force provisioning. Provisioners marked to run always will still run.
+==> r5: Checking if box 'ubuntu/trusty64' is up to date...
+==> r5: Clearing any previously set forwarded ports...
+==> r5: Fixed port collision for 22 => 2222. Now on port 2203.
+==> r5: Clearing any previously set network interfaces...
+==> r5: Preparing network interfaces based on configuration...
+    r5: Adapter 1: nat
+    r5: Adapter 2: hostonly
+    r5: Adapter 3: intnet
+    r5: Adapter 4: intnet
+    r5: Adapter 5: intnet
+==> r5: Forwarding ports...
+    r5: 22 => 2203 (adapter 1)
+==> r5: Running 'pre-boot' VM customizations...
+==> r5: Booting VM...
+==> r5: Waiting for machine to boot. This may take a few minutes...
+    r5: SSH address: 127.0.0.1:2203
+    r5: SSH username: vagrant
+    r5: SSH auth method: private key
+    r5: Warning: Connection timeout. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+Timed out while waiting for the machine to boot. This means that
+Vagrant was unable to communicate with the guest machine within
+the configured ("config.vm.boot_timeout" value) time period.
+
+If you look above, you should be able to see the error(s) that
+Vagrant had when attempting to connect to the machine. These errors
+are usually good hints as to what may be wrong.
+
+If you're using a custom box, make sure that networking is properly
+working and you're able to connect to the machine. It is a common
+problem that networking isn't setup properly in these boxes.
+Verify that authentication configurations are also setup properly,
+as well.
+
+If the box appears to be booting properly, you may want to increase
+the timeout ("config.vm.boot_timeout") value.
+leslieacbookair:vagrant-ansible-routing asamoal$ vagrant ssh
+This command requires a specific VM name to target in a multi-VM environment.
+leslieacbookair:vagrant-ansible-routing asamoal$ vagrant ssh r1
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.13.0-74-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Jan 17 15:59:06 UTC 2016
+
+  System load:         0.35              IP address for eth1: 192.168.250.101
+  Usage of /:          3.9% of 39.34GB   IP address for eth2: 192.168.12.11
+  Memory usage:        52%               IP address for eth3: 192.168.14.11
+  Swap usage:          0%                IP address for eth4: 192.168.15.11
+  Processes:           90                IP address for eth5: 192.168.31.11
+  Users logged in:     0                 IP address for eth6: 1.1.1.10
+  IP address for eth0: 10.0.2.15
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+
+Last login: Sun Jan 17 00:02:51 2016 from 192.168.250.1
+vagrant@r1:~$ logout
+Connection to 127.0.0.1 closed.
+leslieacbookair:vagrant-ansible-routing asamoal$ vagrant ssh r5
+leslieacbookair:vagrant-ansible-routing asamoal$ vagrant ssh r4
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.13.0-74-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+ System information disabled due to load higher than 1.0
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+
+Last login: Sun Jan 17 00:12:59 2016 from 192.168.250.1
+vagrant@r4:~$ logout
+Connection to 127.0.0.1 closed.
+leslieacbookair:vagrant-ansible-routing asamoal$ vagrant ssh r3
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.13.0-74-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Jan 17 16:00:05 UTC 2016
+
+  System load:     0.55              IP address for eth0: 10.0.2.15
+  Usage of /:      3.9% of 39.34GB   IP address for eth1: 192.168.250.103
+  Memory usage:    36%               IP address for eth2: 192.168.31.13
+  Swap usage:      0%                IP address for eth3: 192.168.23.13
+  Processes:       100               IP address for eth4: 3.3.3.10
+  Users logged in: 0
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+
+Last login: Sun Jan 17 00:09:30 2016 from 192.168.250.1
+vagrant@r3:~$ ps -ef
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 15:59 ?        00:00:01 /sbin/init
+root         2     0  0 15:59 ?        00:00:00 [kthreadd]
+root         3     2  0 15:59 ?        00:00:00 [ksoftirqd/0]
+root         4     2  0 15:59 ?        00:00:00 [kworker/0:0]
+root         5     2  0 15:59 ?        00:00:00 [kworker/0:0H]
+root         7     2  0 15:59 ?        00:00:00 [rcu_sched]
+root         8     2  0 15:59 ?        00:00:00 [rcuos/0]
+root         9     2  0 15:59 ?        00:00:00 [rcu_bh]
+root        10     2  0 15:59 ?        00:00:00 [rcuob/0]
+root        11     2  0 15:59 ?        00:00:00 [migration/0]
+root        12     2  0 15:59 ?        00:00:00 [watchdog/0]
+root        13     2  0 15:59 ?        00:00:00 [khelper]
+root        14     2  0 15:59 ?        00:00:00 [kdevtmpfs]
+root        15     2  0 15:59 ?        00:00:00 [netns]
+root        16     2  0 15:59 ?        00:00:00 [writeback]
+root        17     2  0 15:59 ?        00:00:00 [kintegrityd]
+root        18     2  0 15:59 ?        00:00:00 [bioset]
+root        19     2  0 15:59 ?        00:00:00 [kworker/u3:0]
+root        20     2  0 15:59 ?        00:00:00 [kblockd]
+root        21     2  0 15:59 ?        00:00:00 [ata_sff]
+root        22     2  0 15:59 ?        00:00:00 [khubd]
+root        23     2  0 15:59 ?        00:00:00 [md]
+root        24     2  0 15:59 ?        00:00:00 [devfreq_wq]
+root        27     2  0 15:59 ?        00:00:00 [khungtaskd]
+root        28     2  0 15:59 ?        00:00:00 [kswapd0]
+root        29     2  0 15:59 ?        00:00:00 [ksmd]
+root        30     2  0 15:59 ?        00:00:00 [fsnotify_mark]
+root        31     2  0 15:59 ?        00:00:00 [ecryptfs-kthrea]
+root        32     2  0 15:59 ?        00:00:00 [crypto]
+root        44     2  0 15:59 ?        00:00:00 [kthrotld]
+root        64     2  0 15:59 ?        00:00:00 [deferwq]
+root        65     2  0 15:59 ?        00:00:00 [charger_manager]
+root       106     2  0 15:59 ?        00:00:00 [scsi_eh_0]
+root       107     2  0 15:59 ?        00:00:00 [kpsmoused]
+root       108     2  0 15:59 ?        00:00:00 [kworker/u2:2]
+root       125     2  0 15:59 ?        00:00:00 [kworker/u2:3]
+root       170     2  0 15:59 ?        00:00:00 [kworker/u3:1]
+root       171     2  0 15:59 ?        00:00:00 [jbd2/sda1-8]
+root       172     2  0 15:59 ?        00:00:00 [ext4-rsv-conver]
+root       411     1  0 15:59 ?        00:00:00 upstart-udev-bridge --daemon
+root       416     1  0 15:59 ?        00:00:00 /lib/systemd/systemd-udevd --daemon
+root       474     2  0 15:59 ?        00:00:00 [iprt]
+root       548     2  0 15:59 ?        00:00:02 [kworker/0:2]
+root       697     1  0 15:59 ?        00:00:00 dhclient -1 -v -pf /run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.eth0.leases eth0
+root       814     1  0 16:00 ?        00:00:00 rpcbind
+root       860     1  0 16:00 ?        00:00:00 upstart-socket-bridge --daemon
+statd      865     1  0 16:00 ?        00:00:00 rpc.statd -L
+root       941     2  0 16:00 ?        00:00:00 [rpciod]
+root       948     2  0 16:00 ?        00:00:00 [nfsiod]
+message+   978     1  0 16:00 ?        00:00:00 dbus-daemon --system --fork
+root       997     1  0 16:00 ?        00:00:00 rpc.idmapd
+root      1028     1  0 16:00 ?        00:00:00 /lib/systemd/systemd-logind
+syslog    1045     1  0 16:00 ?        00:00:00 rsyslogd
+root      1078     1  0 16:00 ?        00:00:00 upstart-file-bridge --daemon
+root      1124     1  0 16:00 tty4     00:00:00 /sbin/getty -8 38400 tty4
+root      1127     1  0 16:00 tty5     00:00:00 /sbin/getty -8 38400 tty5
+root      1131     1  0 16:00 tty2     00:00:00 /sbin/getty -8 38400 tty2
+root      1132     1  0 16:00 tty3     00:00:00 /sbin/getty -8 38400 tty3
+root      1134     1  0 16:00 tty6     00:00:00 /sbin/getty -8 38400 tty6
+root      1174     1  0 16:00 ?        00:00:00 acpid -c /etc/acpi/events -s /var/run/acpid.socket
+root      1176     1  0 16:00 ?        00:00:00 cron
+daemon    1182     1  0 16:00 ?        00:00:00 atd
+root      1212     1  0 16:00 ?        00:00:00 /usr/sbin/VBoxService
+root      1248     2  0 16:00 ?        00:00:00 [kauditd]
+root      1309     1  0 16:00 ?        00:00:02 /usr/bin/ruby /usr/bin/puppet agent
+root      1755     1  0 16:00 ?        00:00:00 ruby /usr/bin/chef-client -d -P /var/run/chef/client.pid -c /etc/chef/client.rb -i 1800 -s 20 -L /var/log/chef
+root      1852     1  0 16:00 tty1     00:00:00 /sbin/getty -8 38400 tty1
+root      1988     1  0 16:00 ?        00:00:00 /usr/sbin/sshd -D
+root      2673  1988  0 16:22 ?        00:00:00 sshd: vagrant [priv]
+vagrant   2726  2673  0 16:22 ?        00:00:00 sshd: vagrant@pts/0 
+vagrant   2727  2726  0 16:22 pts/0    00:00:00 -bash
+vagrant   2743  2727  0 16:23 pts/0    00:00:00 ps -ef
+vagrant@r3:~$ logout
+Connection to 127.0.0.1 closed.
+leslieacbookair:vagrant-ansible-routing asamoal$ vagrant ssh r2
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.13.0-74-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Jan 17 15:59:35 UTC 2016
+
+  System load:     0.94              IP address for eth0: 10.0.2.15
+  Usage of /:      3.9% of 39.34GB   IP address for eth1: 192.168.250.102
+  Memory usage:    48%               IP address for eth2: 192.168.23.12
+  Swap usage:      0%                IP address for eth3: 192.168.12.12
+  Processes:       92                IP address for eth4: 2.2.2.10
+  Users logged in: 0
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+
+Last login: Sun Jan 17 00:06:08 2016 from 192.168.250.1
+vagrant@r2:~$ logout
+Connection to 127.0.0.1 closed.
+leslieacbookair:vagrant-ansible-routing asamoal$ vagrant ssh r4
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.13.0-74-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Jan 17 16:22:16 UTC 2016
+
+  System load:     0.0               IP address for eth0: 10.0.2.15
+  Usage of /:      3.5% of 39.34GB   IP address for eth1: 192.168.250.104
+  Memory usage:    51%               IP address for eth2: 192.168.14.14
+  Swap usage:      0%                IP address for eth3: 192.168.31.14
+  Processes:       73                IP address for eth4: 192.168.41.14
+  Users logged in: 0                 IP address for eth5: 4.4.4.10
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+
+Last login: Sun Jan 17 16:22:16 2016 from 10.0.2.2
+vagrant@r4:~$ logout
+Connection to 127.0.0.1 closed.
+leslieacbookair:vagrant-ansible-routing asamoal$ vagrant halt
+==> r5: Attempting graceful shutdown of VM...
+    r5: Guest communication could not be established! This is usually because
+    r5: SSH is not running, the authentication information was changed,
+    r5: or some other networking issue. Vagrant will force halt, if
+    r5: capable.
+==> r5: Forcing shutdown of VM...
+==> r4: Removing cache buckets symlinks...
+==> r4: Attempting graceful shutdown of VM...
+==> r3: Removing cache buckets symlinks...
+==> r3: Attempting graceful shutdown of VM...
+==> r2: Removing cache buckets symlinks...
+==> r2: Attempting graceful shutdown of VM...
+==> r1: Removing cache buckets symlinks...
+==> r1: Attempting graceful shutdown of VM...
+leslieacbookair:vagrant-ansible-routing asamoal$ ls -latr
+total 128
+drwxr-xr-x@ 19 asamoal  staff    646 16 Jan 21:18 ..
+-rw-r--r--   1 asamoal  staff    130 16 Jan 21:19 site.yml
+-rw-r--r--   1 asamoal  staff    227 16 Jan 21:19 playbook.yml
+-rw-r--r--   1 asamoal  staff    725 16 Jan 21:19 hosts.example
+lrwxr-xr-x   1 asamoal  staff     65 16 Jan 21:19 hosts -> .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory
+drwxr-xr-x   6 asamoal  staff    204 16 Jan 21:19 host_vars
+drwxr-xr-x   3 asamoal  staff    102 16 Jan 21:19 group_vars
+-rwxr-xr-x   1 asamoal  staff    181 16 Jan 21:19 bootstrap_ansible.sh
+-rw-r--r--   1 asamoal  staff   2664 16 Jan 21:19 bootstrap.yml
+-rw-r--r--   1 asamoal  staff     35 16 Jan 21:19 ansible.cfg
+-rw-r--r--   1 asamoal  staff  26620 16 Jan 21:19 README.md
+drwxr-xr-x  13 asamoal  staff    442 17 Jan 00:21 .git
+drwxr-xr-x  16 asamoal  staff    544 17 Jan 00:52 .
+drwxr-xr-x   4 asamoal  staff    136 17 Jan 01:00 .vagrant
+-rw-r--r--   1 asamoal  staff   3050 17 Jan 16:57 nodes.yml
+-rw-r--r--   1 asamoal  staff   2192 17 Jan 16:57 Vagrantfile
+leslieacbookair:vagrant-ansible-routing asamoal$ more hosts
+# Generated by Vagrant
+
+r1 ansible_ssh_host=127.0.0.1 ansible_ssh_port=2222 ansible_ssh_private_key_file=/Users/asamoal/~Developer/GitLocal/vagrant-ansible-routing/.vagrant/machines/r1/virtualbox/private_key
+r2 ansible_ssh_host=127.0.0.1 ansible_ssh_port=2200 ansible_ssh_private_key_file=/Users/asamoal/~Developer/GitLocal/vagrant-ansible-routing/.vagrant/machines/r2/virtualbox/private_key
+r3 ansible_ssh_host=127.0.0.1 ansible_ssh_port=2201 ansible_ssh_private_key_file=/Users/asamoal/~Developer/GitLocal/vagrant-ansible-routing/.vagrant/machines/r3/virtualbox/private_key
+r4 ansible_ssh_host=127.0.0.1 ansible_ssh_port=2202 ansible_ssh_private_key_file=/Users/asamoal/~Developer/GitLocal/vagrant-ansible-routing/.vagrant/machines/r4/virtualbox/private_key
+leslieacbookair:vagrant-ansible-routing asamoal$ more site.yml 
+---
+- hosts: all
+  remote_user: vagrant
+  sudo: true
+  vars:
+  tasks:
+  roles:
+    - mrlesmithjr.bootstrap
+    - mrlesmithjr.base
+leslieacbookair:vagrant-ansible-routing asamoal$ more playbook.yml 
+---
+- hosts: quagga-routers
+  remote_user: vagrant
+  sudo: true
+  vars:
+  roles:
+    - mrlesmithjr.quagga
+  tasks:
+    - name: installing packages
+      apt: name={{ item }} state=present
+      with_items:
+        - traceroute
+leslieacbookair:vagrant-ansible-routing asamoal$ more ansible.cfg 
+[defaults]
+host_key_checking=False
+leslieacbookair:vagrant-ansible-routing asamoal$ more README.md 
+Purpose
+=======
+
+Spin up vagrant multi node routing environment and manage all nodes using Ansible. Upon spinning up vagrant will provision each node using Ansible to bootstrap the nodes. During the bootstrap each node will have a respective host_vars configuration file which will be updated with their eth1 address and ssh key file location. This allows you to run Ansible plays from within your HostOS or within any of your vagrant nodes.
+
+Follow the "Hey I can DevOPS my Network too!" series on my blog at the following link. http://everythingshouldbevirtual.com/hey-i-can-devops-my-network-too-intro
+
+Requirements
+============
+
+The following packages must be installed on your Host you intend on running all of this from. If Ansible is not available for your OS (Windows) You can modify the following lines in the Vagrantfile.
+
+From:
+````
+
+#  node.vm.provision :shell, path: "bootstrap_ansible.sh"
+
+config.vm.provision :ansible do |ansible|
+  ansible.playbook = "bootstrap.yml"
+end
+````
+To:
+````
+  node.vm.provision :shell, path: "bootstrap_ansible.sh"
+
+#config.vm.provision :ansible do |ansible|
+#  ansible.playbook = "bootstrap.yml"
+#end
+````
+
+Ansible (http://www.ansible.com/home)
+
+VirtualBox (https://www.virtualbox.org/)
+
+Vagrant (https://www.vagrantup.com/)
+
+
+
+Variable Definitions
+====================
+````
+nodes.yml
+````
+Define the nodes to spin up
+````
+---
+- name: r1
+  box: ubuntu/trusty64
+  mem: 512
+  cpus: 1
+  ansible_ssh_host_ip: 192.168.250.101  #HostOnly interface
+  interfaces:  #Internal only interfaces
+    - ip: 192.168.12.11
+      auto_config: "True"
+      network_name: 01-to-02
+      method: static
+      type: private_network
+    - ip: 192.168.14.11
+      auto_config: "True"
+      network_name: 01-to-04
+      method: static
+      type: private_network
+    - ip: 192.168.31.11
+      auto_config: "True"
+      network_name: 03-to-01
+      method: static
+      type: private_network
+    - ip: 1.1.1.10
+      auto_config: "True"
+      network_name: 1-1-1
+      method: static
+      type: private_network
+- name: r2
+  box: ubuntu/trusty64
+  mem: 512
+  cpus: 1
+  ansible_ssh_host_ip: 192.168.250.102  #HostOnly interface
+  interfaces:  #Internal only interfaces
+    - ip: 192.168.23.12
+      auto_config: "True"
+      network_name: 02-to-03
+      method: static
+      type: private_network
+    - ip: 192.168.12.12
+      auto_config: "True"
+      network_name: 01-to-02
+      method: static
+      type: private_network
+    - ip: 2.2.2.10
+      auto_config: "True"
+      network_name: 2-2-2
+      method: static
+      type: private_network
+- name: r3
+  box: ubuntu/trusty64
+  mem: 512
+  cpus: 1
+  ansible_ssh_host_ip: 192.168.250.103  #HostOnly interface
+  interfaces:  #Internal only interfaces
+    - ip: 192.168.31.13
+      auto_config: "True"
+      network_name: 03-to-01
+      method: static
+      type: private_network
+    - ip: 192.168.23.13
+      auto_config: "True"
+      network_name: 02-to-03
+      method: static
+      type: private_network
+    - ip: 3.3.3.10
+      auto_config: "True"
+      network_name: 3-3-3
+      method: static
+      type: private_network
+- name: r4
+  box: ubuntu/trusty64
+  mem: 512
+  cpus: 1
+  ansible_ssh_host_ip: 192.168.250.104  #HostOnly interface
+  interfaces:  #Internal only interfaces
+    - ip: 192.168.14.14
+      auto_config: "True"
+      network_name: 01-to-04
+      method: static
+      type: private_network
+    - ip: 192.168.31.14
+      auto_config: "True"
+      network_name: 03-to-01
+      method: static
+      type: private_network
+    - ip: 192.168.41.14
+      auto_config: "True"
+      network_name: utopia
+      method: static
+      type: private_network
+    - ip: 4.4.4.10
+      auto_config: "True"
+      network_name: 4-4-4
+      method: static
+      type: private_network
+````
+
+Provisions nodes by bootstrapping using Ansible
+````
+bootstrap.yml
+````
+Bootstrap Playbook
+````
+---
+- hosts: all
+  remote_user: vagrant
+  sudo: yes
+  vars:
+    - galaxy_roles:
+      - mrlesmithjr.bootstrap
+      - mrlesmithjr.base
+      - mrlesmithjr.quagga
+    - install_galaxy_roles: true
+    - ssh_key_path: '.vagrant/machines/{{ inventory_hostname }}/virtualbox/private_key'
+    - update_host_vars: true
+  roles:
+  tasks:
+    - name: updating apt cache
+      apt: update_cache=yes cache_valid_time=3600
+      when: ansible_os_family == "Debian"
+
+    - name: installing ansible pre-reqs
+      apt: name={{ item }} state=present
+      with_items:
+        - python-pip
+        - python-dev
+      when: ansible_os_family == "Debian"
+
+    - name: adding ansible ppa
+      apt_repository: repo='ppa:ansible/ansible'
+      when: ansible_os_family == "Debian"
+
+    - name: installing ansible
+      apt: name=ansible state=latest
+      when: ansible_os_family == "Debian"
+
+    - name: installing ansible-galaxy roles
+      shell: ansible-galaxy install {{ item }} --force
+      with_items: galaxy_roles
+      when: install_galaxy_roles is defined and install_galaxy_roles
+
+    - name: ensuring host file exists in host_vars
+      stat: path=./host_vars/{{ inventory_hostname }}
+leslieacbookair:vagrant-ansible-routing asamoal$ ls -latr
+total 128
+drwxr-xr-x@ 19 asamoal  staff    646 16 Jan 21:18 ..
+-rw-r--r--   1 asamoal  staff    130 16 Jan 21:19 site.yml
+-rw-r--r--   1 asamoal  staff    227 16 Jan 21:19 playbook.yml
+-rw-r--r--   1 asamoal  staff    725 16 Jan 21:19 hosts.example
+lrwxr-xr-x   1 asamoal  staff     65 16 Jan 21:19 hosts -> .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory
+drwxr-xr-x   6 asamoal  staff    204 16 Jan 21:19 host_vars
+drwxr-xr-x   3 asamoal  staff    102 16 Jan 21:19 group_vars
+-rwxr-xr-x   1 asamoal  staff    181 16 Jan 21:19 bootstrap_ansible.sh
+-rw-r--r--   1 asamoal  staff   2664 16 Jan 21:19 bootstrap.yml
+-rw-r--r--   1 asamoal  staff     35 16 Jan 21:19 ansible.cfg
+-rw-r--r--   1 asamoal  staff  26620 16 Jan 21:19 README.md
+drwxr-xr-x  13 asamoal  staff    442 17 Jan 00:21 .git
+drwxr-xr-x  16 asamoal  staff    544 17 Jan 00:52 .
+drwxr-xr-x   4 asamoal  staff    136 17 Jan 01:00 .vagrant
+-rw-r--r--   1 asamoal  staff   3050 17 Jan 16:57 nodes.yml
+-rw-r--r--   1 asamoal  staff   2192 17 Jan 16:57 Vagrantfile
+leslieacbookair:vagrant-ansible-routing asamoal$ vagrant up
+Bringing machine 'r1' up with 'virtualbox' provider...
+Bringing machine 'r2' up with 'virtualbox' provider...
+Bringing machine 'r3' up with 'virtualbox' provider...
+Bringing machine 'r4' up with 'virtualbox' provider...
+Bringing machine 'r5' up with 'virtualbox' provider...
+==> r1: Checking if box 'ubuntu/trusty64' is up to date...
+==> r1: Clearing any previously set forwarded ports...
+==> r1: Clearing any previously set network interfaces...
+==> r1: Preparing network interfaces based on configuration...
+    r1: Adapter 1: nat
+    r1: Adapter 2: hostonly
+    r1: Adapter 3: intnet
+    r1: Adapter 4: intnet
+    r1: Adapter 5: intnet
+    r1: Adapter 6: intnet
+    r1: Adapter 7: intnet
+==> r1: Forwarding ports...
+    r1: 22 => 2222 (adapter 1)
+==> r1: Running 'pre-boot' VM customizations...
+==> r1: Booting VM...
+==> r1: Waiting for machine to boot. This may take a few minutes...
+    r1: SSH address: 127.0.0.1:2222
+    r1: SSH username: vagrant
+    r1: SSH auth method: private key
+    r1: Warning: Connection timeout. Retrying...
+==> r1: Machine booted and ready!
+==> r1: Checking for guest additions in VM...
+    r1: The guest additions on this VM do not match the installed version of
+    r1: VirtualBox! In most cases this is fine, but in rare cases it can
+    r1: prevent things such as shared folders from working properly. If you see
+    r1: shared folder errors, please make sure the guest additions within the
+    r1: virtual machine match the version of VirtualBox you have installed on
+    r1: your host and reload your VM.
+    r1: 
+    r1: Guest Additions Version: 4.3.34
+    r1: VirtualBox Version: 5.0
+==> r1: Setting hostname...
+==> r1: Configuring and enabling network interfaces...
+==> r1: Mounting shared folders...
+    r1: /vagrant => /Users/asamoal/~Developer/GitLocal/vagrant-ansible-routing
+    r1: /tmp/vagrant-cache => /Users/asamoal/.vagrant.d/cache/ubuntu/trusty64
+==> r1: Configuring cache buckets...
+==> r1: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> r1: flag to force provisioning. Provisioners marked to run always will still run.
+==> r2: Checking if box 'ubuntu/trusty64' is up to date...
+==> r2: Clearing any previously set forwarded ports...
+==> r2: Fixed port collision for 22 => 2222. Now on port 2200.
+==> r2: Clearing any previously set network interfaces...
+==> r2: Preparing network interfaces based on configuration...
+    r2: Adapter 1: nat
+    r2: Adapter 2: hostonly
+    r2: Adapter 3: intnet
+    r2: Adapter 4: intnet
+    r2: Adapter 5: intnet
+==> r2: Forwarding ports...
+    r2: 22 => 2200 (adapter 1)
+==> r2: Running 'pre-boot' VM customizations...
+==> r2: Booting VM...
+==> r2: Waiting for machine to boot. This may take a few minutes...
+    r2: SSH address: 127.0.0.1:2200
+    r2: SSH username: vagrant
+    r2: SSH auth method: private key
+    r2: Warning: Connection timeout. Retrying...
+==> r2: Machine booted and ready!
+==> r2: Checking for guest additions in VM...
+    r2: The guest additions on this VM do not match the installed version of
+    r2: VirtualBox! In most cases this is fine, but in rare cases it can
+    r2: prevent things such as shared folders from working properly. If you see
+    r2: shared folder errors, please make sure the guest additions within the
+    r2: virtual machine match the version of VirtualBox you have installed on
+    r2: your host and reload your VM.
+    r2: 
+    r2: Guest Additions Version: 4.3.34
+    r2: VirtualBox Version: 5.0
+==> r2: Setting hostname...
+==> r2: Configuring and enabling network interfaces...
+==> r2: Mounting shared folders...
+    r2: /vagrant => /Users/asamoal/~Developer/GitLocal/vagrant-ansible-routing
+    r2: /tmp/vagrant-cache => /Users/asamoal/.vagrant.d/cache/ubuntu/trusty64
+==> r2: Configuring cache buckets...
+==> r2: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> r2: flag to force provisioning. Provisioners marked to run always will still run.
+==> r3: Checking if box 'ubuntu/trusty64' is up to date...
+==> r3: Clearing any previously set forwarded ports...
+==> r3: Fixed port collision for 22 => 2222. Now on port 2201.
+==> r3: Clearing any previously set network interfaces...
+==> r3: Preparing network interfaces based on configuration...
+    r3: Adapter 1: nat
+    r3: Adapter 2: hostonly
+    r3: Adapter 3: intnet
+    r3: Adapter 4: intnet
+    r3: Adapter 5: intnet
+==> r3: Forwarding ports...
+    r3: 22 => 2201 (adapter 1)
+==> r3: Running 'pre-boot' VM customizations...
+==> r3: Booting VM...
+==> r3: Waiting for machine to boot. This may take a few minutes...
+    r3: SSH address: 127.0.0.1:2201
+    r3: SSH username: vagrant
+    r3: SSH auth method: private key
+    r3: Warning: Connection timeout. Retrying...
+==> r3: Machine booted and ready!
+==> r3: Checking for guest additions in VM...
+    r3: The guest additions on this VM do not match the installed version of
+    r3: VirtualBox! In most cases this is fine, but in rare cases it can
+    r3: prevent things such as shared folders from working properly. If you see
+    r3: shared folder errors, please make sure the guest additions within the
+    r3: virtual machine match the version of VirtualBox you have installed on
+    r3: your host and reload your VM.
+    r3: 
+    r3: Guest Additions Version: 4.3.34
+    r3: VirtualBox Version: 5.0
+==> r3: Setting hostname...
+==> r3: Configuring and enabling network interfaces...
+==> r3: Mounting shared folders...
+    r3: /vagrant => /Users/asamoal/~Developer/GitLocal/vagrant-ansible-routing
+    r3: /tmp/vagrant-cache => /Users/asamoal/.vagrant.d/cache/ubuntu/trusty64
+==> r3: Configuring cache buckets...
+==> r3: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> r3: flag to force provisioning. Provisioners marked to run always will still run.
+==> r4: Checking if box 'ubuntu/trusty64' is up to date...
+==> r4: Clearing any previously set forwarded ports...
+==> r4: Fixed port collision for 22 => 2222. Now on port 2202.
+==> r4: Clearing any previously set network interfaces...
+==> r4: Preparing network interfaces based on configuration...
+    r4: Adapter 1: nat
+    r4: Adapter 2: hostonly
+    r4: Adapter 3: intnet
+    r4: Adapter 4: intnet
+    r4: Adapter 5: intnet
+    r4: Adapter 6: intnet
+==> r4: Forwarding ports...
+    r4: 22 => 2202 (adapter 1)
+==> r4: Running 'pre-boot' VM customizations...
+==> r4: Booting VM...
+==> r4: Waiting for machine to boot. This may take a few minutes...
+    r4: SSH address: 127.0.0.1:2202
+    r4: SSH username: vagrant
+    r4: SSH auth method: private key
+    r4: Warning: Connection timeout. Retrying...
+==> r4: Machine booted and ready!
+==> r4: Checking for guest additions in VM...
+    r4: The guest additions on this VM do not match the installed version of
+    r4: VirtualBox! In most cases this is fine, but in rare cases it can
+    r4: prevent things such as shared folders from working properly. If you see
+    r4: shared folder errors, please make sure the guest additions within the
+    r4: virtual machine match the version of VirtualBox you have installed on
+    r4: your host and reload your VM.
+    r4: 
+    r4: Guest Additions Version: 4.3.34
+    r4: VirtualBox Version: 5.0
+==> r4: Setting hostname...
+==> r4: Configuring and enabling network interfaces...
+==> r4: Mounting shared folders...
+    r4: /vagrant => /Users/asamoal/~Developer/GitLocal/vagrant-ansible-routing
+    r4: /tmp/vagrant-cache => /Users/asamoal/.vagrant.d/cache/ubuntu/trusty64
+==> r4: Configuring cache buckets...
+==> r4: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> r4: flag to force provisioning. Provisioners marked to run always will still run.
+==> r5: Checking if box 'ubuntu/trusty64' is up to date...
+==> r5: Clearing any previously set forwarded ports...
+==> r5: Fixed port collision for 22 => 2222. Now on port 2203.
+==> r5: Clearing any previously set network interfaces...
+==> r5: Preparing network interfaces based on configuration...
+    r5: Adapter 1: nat
+    r5: Adapter 2: hostonly
+    r5: Adapter 3: intnet
+    r5: Adapter 4: intnet
+    r5: Adapter 5: intnet
+==> r5: Forwarding ports...
+    r5: 22 => 2203 (adapter 1)
+==> r5: Running 'pre-boot' VM customizations...
+==> r5: Booting VM...
+==> r5: Waiting for machine to boot. This may take a few minutes...
+    r5: SSH address: 127.0.0.1:2203
+    r5: SSH username: vagrant
+    r5: SSH auth method: private key
+    r5: Warning: Connection timeout. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+Timed out while waiting for the machine to boot. This means that
+Vagrant was unable to communicate with the guest machine within
+the configured ("config.vm.boot_timeout" value) time period.
+
+If you look above, you should be able to see the error(s) that
+Vagrant had when attempting to connect to the machine. These errors
+are usually good hints as to what may be wrong.
+
+If you're using a custom box, make sure that networking is properly
+working and you're able to connect to the machine. It is a common
+problem that networking isn't setup properly in these boxes.
+Verify that authentication configurations are also setup properly,
+as well.
+
+If the box appears to be booting properly, you may want to increase
+the timeout ("config.vm.boot_timeout") value.
+leslieacbookair:vagrant-ansible-routing asamoal$ cd /var/
+agentx/       backups/      dovecot/      folders~orig/ lock/         msgs/         pgsql_socket/ run/          spool/        yp/           
+at/           db/           empty/        jabberd/      log/          netboot/      root/         rwho/         tmp/          
+audit/        dne/          folders/      lib/          mail/         networkd/     rpc/          servermgrd/   vm/           
+leslieacbookair:vagrant-ansible-routing asamoal$ pwd
+/Users/asamoal/~Developer/GitLocal/vagrant-ansible-routing
+leslieacbookair:vagrant-ansible-routing asamoal$ ls -alrt
+total 128
+drwxr-xr-x@ 19 asamoal  staff    646 16 Jan 21:18 ..
+-rw-r--r--   1 asamoal  staff    130 16 Jan 21:19 site.yml
+-rw-r--r--   1 asamoal  staff    227 16 Jan 21:19 playbook.yml
+-rw-r--r--   1 asamoal  staff    725 16 Jan 21:19 hosts.example
+lrwxr-xr-x   1 asamoal  staff     65 16 Jan 21:19 hosts -> .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory
+drwxr-xr-x   6 asamoal  staff    204 16 Jan 21:19 host_vars
+drwxr-xr-x   3 asamoal  staff    102 16 Jan 21:19 group_vars
+-rwxr-xr-x   1 asamoal  staff    181 16 Jan 21:19 bootstrap_ansible.sh
+-rw-r--r--   1 asamoal  staff   2664 16 Jan 21:19 bootstrap.yml
+-rw-r--r--   1 asamoal  staff     35 16 Jan 21:19 ansible.cfg
+-rw-r--r--   1 asamoal  staff  26620 16 Jan 21:19 README.md
+drwxr-xr-x  13 asamoal  staff    442 17 Jan 00:21 .git
+drwxr-xr-x  16 asamoal  staff    544 17 Jan 00:52 .
+drwxr-xr-x   4 asamoal  staff    136 17 Jan 01:00 .vagrant
+-rw-r--r--   1 asamoal  staff   3050 17 Jan 16:57 nodes.yml
+-rw-r--r--   1 asamoal  staff   2192 17 Jan 16:57 Vagrantfile
+leslieacbookair:vagrant-ansible-routing asamoal$ cd .vagrant/
+leslieacbookair:.vagrant asamoal$ ls -latr
+total 0
+drwxr-xr-x  16 asamoal  staff  544 17 Jan 00:52 ..
+drwxr-xr-x   7 asamoal  staff  238 17 Jan 00:52 machines
+drwxr-xr-x   3 asamoal  staff  102 17 Jan 01:00 provisioners
+drwxr-xr-x   4 asamoal  staff  136 17 Jan 01:00 .
+leslieacbookair:.vagrant asamoal$ cd machines/
+leslieacbookair:machines asamoal$ ls -altr
+total 0
+drwxr-xr-x  3 asamoal  staff  102 17 Jan 00:52 r2
+drwxr-xr-x  3 asamoal  staff  102 17 Jan 00:52 r1
+drwxr-xr-x  3 asamoal  staff  102 17 Jan 00:52 r5
+drwxr-xr-x  3 asamoal  staff  102 17 Jan 00:52 r4
+drwxr-xr-x  3 asamoal  staff  102 17 Jan 00:52 r3
+drwxr-xr-x  7 asamoal  staff  238 17 Jan 00:52 .
+drwxr-xr-x  4 asamoal  staff  136 17 Jan 01:00 ..
+leslieacbookair:machines asamoal$ ls -altr r5/
+total 0
+drwxr-xr-x  7 asamoal  staff  238 17 Jan 00:52 ..
+drwxr-xr-x  3 asamoal  staff  102 17 Jan 00:52 .
+drwxr-xr-x  6 asamoal  staff  204 17 Jan 01:13 virtualbox
+leslieacbookair:machines asamoal$ ls -altr r5/virtualbox/
+total 32
+drwxr-xr-x  3 asamoal  staff  102 17 Jan 00:52 ..
+-rw-r--r--  1 asamoal  staff   32 17 Jan 01:13 index_uuid
+-rw-r--r--  1 asamoal  staff   36 17 Jan 01:13 id
+-rw-r--r--  1 asamoal  staff    3 17 Jan 01:13 creator_uid
+-rw-r--r--  1 asamoal  staff   10 17 Jan 01:13 action_set_name
+drwxr-xr-x  6 asamoal  staff  204 17 Jan 01:13 .
+leslieacbookair:machines asamoal$ #rm -rf r5
+leslieacbookair:machines asamoal$ vagrant halt
+There was an error loading a Vagrantfile. The file being loaded
+and the error message are shown below. This is usually caused by
+a syntax error.
+
+Path: /Users/asamoal/~Developer/GitLocal/vagrant-ansible-routing/Vagrantfile
+Line number: 299
+Message: Errno::ENOENT: No such file or directory - nodes.yml
+leslieacbookair:machines asamoal$ pwd
+/Users/asamoal/~Developer/GitLocal/vagrant-ansible-routing/.vagrant/machines
+leslieacbookair:machines asamoal$ cd ,
+-bash: cd: ,: No such file or directory
+leslieacbookair:machines asamoal$ cd ..
+leslieacbookair:.vagrant asamoal$ cd ..
+leslieacbookair:vagrant-ansible-routing asamoal$ ls -la
+total 128
+drwxr-xr-x  16 asamoal  staff    544 17 Jan 00:52 .
+drwxr-xr-x@ 19 asamoal  staff    646 16 Jan 21:18 ..
+drwxr-xr-x  13 asamoal  staff    442 17 Jan 00:21 .git
+drwxr-xr-x   4 asamoal  staff    136 17 Jan 01:00 .vagrant
+-rw-r--r--   1 asamoal  staff  26620 16 Jan 21:19 README.md
+-rw-r--r--   1 asamoal  staff   2192 17 Jan 16:57 Vagrantfile
+-rw-r--r--   1 asamoal  staff     35 16 Jan 21:19 ansible.cfg
+-rw-r--r--   1 asamoal  staff   2664 16 Jan 21:19 bootstrap.yml
+-rwxr-xr-x   1 asamoal  staff    181 16 Jan 21:19 bootstrap_ansible.sh
+drwxr-xr-x   3 asamoal  staff    102 16 Jan 21:19 group_vars
+drwxr-xr-x   6 asamoal  staff    204 16 Jan 21:19 host_vars
+lrwxr-xr-x   1 asamoal  staff     65 16 Jan 21:19 hosts -> .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory
+-rw-r--r--   1 asamoal  staff    725 16 Jan 21:19 hosts.example
+-rw-r--r--   1 asamoal  staff   3050 17 Jan 16:57 nodes.yml
+-rw-r--r--   1 asamoal  staff    227 16 Jan 21:19 playbook.yml
+-rw-r--r--   1 asamoal  staff    130 16 Jan 21:19 site.yml
+leslieacbookair:vagrant-ansible-routing asamoal$ vagrant halt
+==> r5: Attempting graceful shutdown of VM...
+    r5: Guest communication could not be established! This is usually because
+    r5: SSH is not running, the authentication information was changed,
+    r5: or some other networking issue. Vagrant will force halt, if
+    r5: capable.
+==> r5: Forcing shutdown of VM...
+==> r4: Removing cache buckets symlinks...
+==> r4: Attempting graceful shutdown of VM...
+==> r3: Removing cache buckets symlinks...
+==> r3: Attempting graceful shutdown of VM...
+==> r2: Removing cache buckets symlinks...
+==> r2: Attempting graceful shutdown of VM...
+==> r1: Removing cache buckets symlinks...
+==> r1: Attempting graceful shutdown of VM...
+leslieacbookair:vagrant-ansible-routing asamoal$ rm -rf .vagrant/machines/r5
+leslieacbookair:vagrant-ansible-routing asamoal$ vagrant up
+Bringing machine 'r1' up with 'virtualbox' provider...
+Bringing machine 'r2' up with 'virtualbox' provider...
+Bringing machine 'r3' up with 'virtualbox' provider...
+Bringing machine 'r4' up with 'virtualbox' provider...
+Bringing machine 'r5' up with 'virtualbox' provider...
+==> r1: Checking if box 'ubuntu/trusty64' is up to date...
+==> r1: Clearing any previously set forwarded ports...
+==> r1: Clearing any previously set network interfaces...
+==> r1: Preparing network interfaces based on configuration...
+    r1: Adapter 1: nat
+    r1: Adapter 2: hostonly
+    r1: Adapter 3: intnet
+    r1: Adapter 4: intnet
+    r1: Adapter 5: intnet
+    r1: Adapter 6: intnet
+    r1: Adapter 7: intnet
+==> r1: Forwarding ports...
+    r1: 22 => 2222 (adapter 1)
+==> r1: Running 'pre-boot' VM customizations...
+==> r1: Booting VM...
+==> r1: Waiting for machine to boot. This may take a few minutes...
+    r1: SSH address: 127.0.0.1:2222
+    r1: SSH username: vagrant
+    r1: SSH auth method: private key
+    r1: Warning: Connection timeout. Retrying...
+==> r1: Machine booted and ready!
+==> r1: Checking for guest additions in VM...
+    r1: The guest additions on this VM do not match the installed version of
+    r1: VirtualBox! In most cases this is fine, but in rare cases it can
+    r1: prevent things such as shared folders from working properly. If you see
+    r1: shared folder errors, please make sure the guest additions within the
+    r1: virtual machine match the version of VirtualBox you have installed on
+    r1: your host and reload your VM.
+    r1: 
+    r1: Guest Additions Version: 4.3.34
+    r1: VirtualBox Version: 5.0
+==> r1: Setting hostname...
+==> r1: Configuring and enabling network interfaces...
+==> r1: Mounting shared folders...
+    r1: /vagrant => /Users/asamoal/~Developer/GitLocal/vagrant-ansible-routing
+    r1: /tmp/vagrant-cache => /Users/asamoal/.vagrant.d/cache/ubuntu/trusty64
+==> r1: Configuring cache buckets...
+==> r1: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> r1: flag to force provisioning. Provisioners marked to run always will still run.
+==> r2: Checking if box 'ubuntu/trusty64' is up to date...
+==> r2: Clearing any previously set forwarded ports...
+==> r2: Fixed port collision for 22 => 2222. Now on port 2200.
+==> r2: Clearing any previously set network interfaces...
+==> r2: Preparing network interfaces based on configuration...
+    r2: Adapter 1: nat
+    r2: Adapter 2: hostonly
+    r2: Adapter 3: intnet
+    r2: Adapter 4: intnet
+    r2: Adapter 5: intnet
+==> r2: Forwarding ports...
+    r2: 22 => 2200 (adapter 1)
+==> r2: Running 'pre-boot' VM customizations...
+==> r2: Booting VM...
+==> r2: Waiting for machine to boot. This may take a few minutes...
+    r2: SSH address: 127.0.0.1:2200
+    r2: SSH username: vagrant
+    r2: SSH auth method: private key
+    r2: Warning: Connection timeout. Retrying...
+==> r2: Machine booted and ready!
+==> r2: Checking for guest additions in VM...
+    r2: The guest additions on this VM do not match the installed version of
+    r2: VirtualBox! In most cases this is fine, but in rare cases it can
+    r2: prevent things such as shared folders from working properly. If you see
+    r2: shared folder errors, please make sure the guest additions within the
+    r2: virtual machine match the version of VirtualBox you have installed on
+    r2: your host and reload your VM.
+    r2: 
+    r2: Guest Additions Version: 4.3.34
+    r2: VirtualBox Version: 5.0
+==> r2: Setting hostname...
+==> r2: Configuring and enabling network interfaces...
+==> r2: Mounting shared folders...
+    r2: /vagrant => /Users/asamoal/~Developer/GitLocal/vagrant-ansible-routing
+    r2: /tmp/vagrant-cache => /Users/asamoal/.vagrant.d/cache/ubuntu/trusty64
+==> r2: Configuring cache buckets...
+==> r2: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> r2: flag to force provisioning. Provisioners marked to run always will still run.
+==> r3: Checking if box 'ubuntu/trusty64' is up to date...
+==> r3: Clearing any previously set forwarded ports...
+==> r3: Fixed port collision for 22 => 2222. Now on port 2201.
+==> r3: Clearing any previously set network interfaces...
+==> r3: Preparing network interfaces based on configuration...
+    r3: Adapter 1: nat
+    r3: Adapter 2: hostonly
+    r3: Adapter 3: intnet
+    r3: Adapter 4: intnet
+    r3: Adapter 5: intnet
+==> r3: Forwarding ports...
+    r3: 22 => 2201 (adapter 1)
+==> r3: Running 'pre-boot' VM customizations...
+==> r3: Booting VM...
+==> r3: Waiting for machine to boot. This may take a few minutes...
+    r3: SSH address: 127.0.0.1:2201
+    r3: SSH username: vagrant
+    r3: SSH auth method: private key
+    r3: Warning: Connection timeout. Retrying...
+==> r3: Machine booted and ready!
+==> r3: Checking for guest additions in VM...
+    r3: The guest additions on this VM do not match the installed version of
+    r3: VirtualBox! In most cases this is fine, but in rare cases it can
+    r3: prevent things such as shared folders from working properly. If you see
+    r3: shared folder errors, please make sure the guest additions within the
+    r3: virtual machine match the version of VirtualBox you have installed on
+    r3: your host and reload your VM.
+    r3: 
+    r3: Guest Additions Version: 4.3.34
+    r3: VirtualBox Version: 5.0
+==> r3: Setting hostname...
+==> r3: Configuring and enabling network interfaces...
+==> r3: Mounting shared folders...
+    r3: /vagrant => /Users/asamoal/~Developer/GitLocal/vagrant-ansible-routing
+    r3: /tmp/vagrant-cache => /Users/asamoal/.vagrant.d/cache/ubuntu/trusty64
+==> r3: Configuring cache buckets...
+==> r3: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> r3: flag to force provisioning. Provisioners marked to run always will still run.
+==> r4: Checking if box 'ubuntu/trusty64' is up to date...
+==> r4: Clearing any previously set forwarded ports...
+==> r4: Fixed port collision for 22 => 2222. Now on port 2202.
+==> r4: Clearing any previously set network interfaces...
+==> r4: Preparing network interfaces based on configuration...
+    r4: Adapter 1: nat
+    r4: Adapter 2: hostonly
+    r4: Adapter 3: intnet
+    r4: Adapter 4: intnet
+    r4: Adapter 5: intnet
+    r4: Adapter 6: intnet
+==> r4: Forwarding ports...
+    r4: 22 => 2202 (adapter 1)
+==> r4: Running 'pre-boot' VM customizations...
+==> r4: Booting VM...
+==> r4: Waiting for machine to boot. This may take a few minutes...
+    r4: SSH address: 127.0.0.1:2202
+    r4: SSH username: vagrant
+    r4: SSH auth method: private key
+    r4: Warning: Connection timeout. Retrying...
+==> r4: Machine booted and ready!
+==> r4: Checking for guest additions in VM...
+    r4: The guest additions on this VM do not match the installed version of
+    r4: VirtualBox! In most cases this is fine, but in rare cases it can
+    r4: prevent things such as shared folders from working properly. If you see
+    r4: shared folder errors, please make sure the guest additions within the
+    r4: virtual machine match the version of VirtualBox you have installed on
+    r4: your host and reload your VM.
+    r4: 
+    r4: Guest Additions Version: 4.3.34
+    r4: VirtualBox Version: 5.0
+==> r4: Setting hostname...
+==> r4: Configuring and enabling network interfaces...
+==> r4: Mounting shared folders...
+    r4: /vagrant => /Users/asamoal/~Developer/GitLocal/vagrant-ansible-routing
+    r4: /tmp/vagrant-cache => /Users/asamoal/.vagrant.d/cache/ubuntu/trusty64
+==> r4: Configuring cache buckets...
+==> r4: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> r4: flag to force provisioning. Provisioners marked to run always will still run.
+==> r5: Importing base box 'ubuntu/trusty64'...
+==> r5: Matching MAC address for NAT networking...
+==> r5: Checking if box 'ubuntu/trusty64' is up to date...
+==> r5: Setting the name of the VM: vagrant-ansible-routing_r5_1453049865673_9105
+==> r5: Clearing any previously set forwarded ports...
+==> r5: Fixed port collision for 22 => 2222. Now on port 2203.
+==> r5: Clearing any previously set network interfaces...
+==> r5: Preparing network interfaces based on configuration...
+    r5: Adapter 1: nat
+    r5: Adapter 2: hostonly
+    r5: Adapter 3: intnet
+    r5: Adapter 4: intnet
+    r5: Adapter 5: intnet
+==> r5: Forwarding ports...
+    r5: 22 => 2203 (adapter 1)
+==> r5: Running 'pre-boot' VM customizations...
+==> r5: Booting VM...
+==> r5: Waiting for machine to boot. This may take a few minutes...
+    r5: SSH address: 127.0.0.1:2203
+    r5: SSH username: vagrant
+    r5: SSH auth method: private key
+    r5: Warning: Connection timeout. Retrying...
+    r5: Warning: Remote connection disconnect. Retrying...
+    r5: 
+    r5: Vagrant insecure key detected. Vagrant will automatically replace
+    r5: this with a newly generated keypair for better security.
+    r5: 
+    r5: Inserting generated public key within guest...
+    r5: Removing insecure key from the guest if it's present...
+    r5: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> r5: Machine booted and ready!
+==> r5: Checking for guest additions in VM...
+    r5: The guest additions on this VM do not match the installed version of
+    r5: VirtualBox! In most cases this is fine, but in rare cases it can
+    r5: prevent things such as shared folders from working properly. If you see
+    r5: shared folder errors, please make sure the guest additions within the
+    r5: virtual machine match the version of VirtualBox you have installed on
+    r5: your host and reload your VM.
+    r5: 
+    r5: Guest Additions Version: 4.3.34
+    r5: VirtualBox Version: 5.0
+==> r5: Setting hostname...
+==> r5: Configuring and enabling network interfaces...
+==> r5: Mounting shared folders...
+    r5: /vagrant => /Users/asamoal/~Developer/GitLocal/vagrant-ansible-routing
+    r5: /tmp/vagrant-cache => /Users/asamoal/.vagrant.d/cache/ubuntu/trusty64
+==> r5: Configuring cache buckets...
+==> r5: Running provisioner: ansible...
+
+PLAY [all] ******************************************************************** 
+
+GATHERING FACTS *************************************************************** 
+ok: [r5]
+
+TASK: [updating apt cache] **************************************************** 
+ok: [r5]
+
+TASK: [installing ansible pre-reqs] ******************************************* 
+changed: [r5] => (item=python-pip,python-dev)
+
+TASK: [adding ansible ppa] **************************************************** 
+changed: [r5]
+
+TASK: [installing ansible] **************************************************** 
+changed: [r5]
+
+TASK: [installing ansible-galaxy roles] *************************************** 
+changed: [r5] => (item=mrlesmithjr.bootstrap)
+changed: [r5] => (item=mrlesmithjr.base)
+changed: [r5] => (item=mrlesmithjr.quagga)
+
+TASK: [ensuring host file exists in host_vars] ******************************** 
+ok: [r5 -> localhost]
+
+TASK: [creating missing host_vars] ******************************************** 
+changed: [r5 -> localhost]
+
+TASK: [updating ansible_ssh_port] ********************************************* 
+changed: [r5 -> localhost]
+
+TASK: [updating ansible_ssh_host] ********************************************* 
+changed: [r5 -> localhost]
+
+TASK: [updating ansible_ssh_key] ********************************************** 
+changed: [r5 -> localhost]
+
+TASK: [ensuring host_vars is yaml formatted] ********************************** 
+changed: [r5 -> localhost]
+
+PLAY RECAP ******************************************************************** 
+r5                         : ok=12   changed=9    unreachable=0    failed=0   
+
+==> r5: Configuring cache buckets...
+leslieacbookair:vagrant-ansible-routing asamoal$ vagrant ssh r5
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.13.0-74-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+ System information disabled due to load higher than 1.0
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+0 packages can be updated.
+0 updates are security updates.
+
+
+Last login: Sun Jan 17 16:59:28 2016 from 10.0.2.2
+vagrant@r5:~$ logout
+Connection to 127.0.0.1 closed.
+leslieacbookair:vagrant-ansible-routing asamoal$ vagrant ssh r5
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.13.0-74-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Jan 17 17:02:16 UTC 2016
+
+  System load:     0.06              IP address for eth0: 10.0.2.15
+  Usage of /:      3.5% of 39.34GB   IP address for eth1: 192.168.250.105
+  Memory usage:    53%               IP address for eth2: 192.168.15.15
+  Swap usage:      0%                IP address for eth3: 192.168.51.15
+  Processes:       75                IP address for eth4: 5.5.5.10
+  Users logged in: 0
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+
+Last login: Sun Jan 17 17:02:17 2016 from 10.0.2.2
+vagrant@r5:~$ logout
+Connection to 127.0.0.1 closed.
+leslieacbookair:vagrant-ansible-routing asamoal$ vagrant ssh r4
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.13.0-74-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Jan 17 16:57:15 UTC 2016
+
+  System load:     0.76              IP address for eth0: 10.0.2.15
+  Usage of /:      3.5% of 39.34GB   IP address for eth1: 192.168.250.104
+  Memory usage:    51%               IP address for eth2: 192.168.14.14
+  Swap usage:      0%                IP address for eth3: 192.168.31.14
+  Processes:       103               IP address for eth4: 192.168.41.14
+  Users logged in: 0                 IP address for eth5: 4.4.4.10
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+
+Last login: Sun Jan 17 16:23:51 2016 from 10.0.2.2
+vagrant@r4:~$ logout
+Connection to 127.0.0.1 closed.
+leslieacbookair:vagrant-ansible-routing asamoal$ vagrant ssh r1
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.13.0-74-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Jan 17 16:55:51 UTC 2016
+
+  System load:         0.39              IP address for eth1: 192.168.250.101
+  Usage of /:          3.5% of 39.34GB   IP address for eth2: 192.168.12.11
+  Memory usage:        51%               IP address for eth3: 192.168.14.11
+  Swap usage:          0%                IP address for eth4: 192.168.15.11
+  Processes:           104               IP address for eth5: 192.168.31.11
+  Users logged in:     0                 IP address for eth6: 1.1.1.10
+  IP address for eth0: 10.0.2.15
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+
+Last login: Sun Jan 17 16:09:02 2016 from 10.0.2.2
+vagrant@r1:~$ ansible
+ansible           ansible-doc       ansible-galaxy    ansible-playbook  ansible-pull      ansible-vault     
+vagrant@r1:~$ cd /va
+vagrant/ var/     
+vagrant@r1:~$ cd /va
+vagrant/ var/     
+vagrant@r1:~$ cd /vagrant/
+vagrant@r1:/vagrant$ ls -altr
+total 68
+-rw-r--r--  1 vagrant vagrant   130 Jan 16 20:19 site.yml
+-rw-r--r--  1 vagrant vagrant 26620 Jan 16 20:19 README.md
+-rw-r--r--  1 vagrant vagrant   227 Jan 16 20:19 playbook.yml
+-rw-r--r--  1 vagrant vagrant   725 Jan 16 20:19 hosts.example
+lrwxr-xr-x  1 vagrant vagrant    65 Jan 16 20:19 hosts -> .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory
+drwxr-xr-x  1 vagrant vagrant   102 Jan 16 20:19 group_vars
+-rw-r--r--  1 vagrant vagrant  2664 Jan 16 20:19 bootstrap.yml
+-rwxr-xr-x  1 vagrant vagrant   181 Jan 16 20:19 bootstrap_ansible.sh
+-rw-r--r--  1 vagrant vagrant    35 Jan 16 20:19 ansible.cfg
+drwxr-xr-x  1 vagrant vagrant   442 Jan 16 23:21 .git
+drwxr-xr-x  1 vagrant vagrant   544 Jan 16 23:52 .
+drwxr-xr-x  1 vagrant vagrant   136 Jan 17 00:00 .vagrant
+-rw-r--r--  1 vagrant vagrant  3050 Jan 17 15:57 nodes.yml
+-rw-r--r--  1 vagrant vagrant  2192 Jan 17 15:57 Vagrantfile
+drwxr-xr-x 23 root    root     4096 Jan 17 16:55 ..
+drwxr-xr-x  1 vagrant vagrant   238 Jan 17 16:59 host_vars
+vagrant@r1:/vagrant$ 
